@@ -1,0 +1,15 @@
+<div class="pagination" *ngIf="pageDetails.length">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pg-blue">
+            <li class="page-item disabled">
+                <a href="{{previous}}" class="page-link blue">Previous</a>
+            </li>
+            <li *ngFor="let page of pageDetails" class="page-item {{page.active}}">
+                <a href="{{page.link}}" class="page-link" mdbWavesEffect>{{page.page}}</a>
+            </li>
+            <li class="page-item">
+                <a href="{{next}}" class="page-link blue" mdbWavesEffect>Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -10,6 +10,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.btn {
+    padding: .63rem 1.60rem !important;
+}
+
 .blue-bg {
     background-color: #3f729b !important;
 }
@@ -23,7 +27,7 @@ body {
 }
 
 .center {
-    margin-left: 17%;
+    margin: 1% 0% 1% 17%;
     width: 66%;
 }
 
@@ -45,8 +49,6 @@ body {
     border-radius: 38%;
     height: auto;
 }
-
-.fa:hover {}
 
 .fa-facebook {
     background: #3B5998;
@@ -106,6 +108,18 @@ body {
     float: right;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -114,4 +128,11 @@ hr {
     box-sizing: content-box;
     height: 0;
     overflow: visible;
+}
+
+@media only screen and (max-width: 600px) {
+    .center {
+        margin-left: 1%;
+        width: 98%;
+    }
 }
