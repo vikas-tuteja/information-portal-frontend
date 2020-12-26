@@ -1,0 +1,10 @@
+.each-nav {
+    padding: 8px 50px 8px 0px;
+    font-size: 1.3rem;
+    font-weight: 400 !important;
+    margin: 10px 0px 10px 0 !important;
+}
+
+.nav-item>a {
+    text-decoration: none;
+}

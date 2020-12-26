@@ -1,0 +1,58 @@
+<!--Navbar-->
+<div class="blue-bg">
+    <mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
+
+        <!-- Navbar brand -->
+        <div class="center">
+            <!-- <mdb-navbar-brand><a class="navbar-brand white" href="#">Logo</a></mdb-navbar-brand> -->
+
+            <!-- Collapsible content -->
+            <!-- <links> -->
+
+            <!-- Links -->
+            <ul class="navbar-nav full-width">
+                <li class="nav-item active">
+                    <a class="each-nav white" mdbWavesEffect href="/"><span class="pointer">Logo</span><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="each-nav white" mdbWavesEffect href="/"><span class="pointer">Home</span><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/latest-news"><span class="pointer">Latest News</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/audio-library"><span class="pointer">Library</span></a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item " dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" class="each-nav dropdown-toggle white" mdbWavesEffect>
+                        <span class="pointer">Content</span><span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                        <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">News</span></a>
+                        <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Articles</span></a>
+                        <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Blogs</span></a>
+                        <!--div class="divider dropdown-divider"></div>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a-->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/our-mission">Our Mission</a>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/contact-us">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="each-nav white" mdbWavesEffect href="/faqs">FAQs</a>
+                </li>
+            </ul>
+            <!-- Links -->
+            <!-- </links> -->
+            <!-- Collapsible content -->
+        </div>
+    </mdb-navbar>
+</div>
+<!--/.Navbar-->
