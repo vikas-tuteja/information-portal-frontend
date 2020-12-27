@@ -19,6 +19,7 @@ import { ContentComponent } from './components/content/content.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { RightPanelComponent } from './components/right-panel/right-panel.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +36,15 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ContentComponent,
     SigninComponent,
     SignupComponent,
-    PaginationComponent
+    PaginationComponent,
+    RightPanelComponent
   ],
   imports: [
     MatIconModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
 
   ],
   providers: [],

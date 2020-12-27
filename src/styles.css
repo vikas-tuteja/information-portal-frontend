@@ -14,6 +14,10 @@ body {
     padding: .63rem 1.60rem !important;
 }
 
+.white-bg {
+    background-color: white !important;
+}
+
 .blue-bg {
     background-color: #3f729b !important;
 }
@@ -129,6 +133,92 @@ hr {
     height: 0;
     overflow: visible;
 }
+
+.desktop-badge {
+    width: 110px;
+    height: 110px;
+    padding-top: 18px;
+    /* background-color: #cfefff; */
+    /* background-color: #c4c5c5; */
+    background-color: #efefef;
+    box-shadow: 2px 2px #8a8a8a;
+    margin-right: 10px;
+}
+
+.badge-head {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.badge-data {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+li {
+    text-decoration: none;
+}
+
+.image-col-3 {
+    width: 272px !important;
+    height: 192px !important;
+}
+
+.home-widget {
+    height: 600px;
+}
+
+.home-widget-content {
+    height: 540px;
+    overflow-y: auto;
+}
+
+.home-widget-data {
+    width: 550px;
+    padding: 1rem;
+}
+
+.each-home-widget {
+    margin-bottom: 1%;
+}
+
+
+/* home page and right pane css --starts */
+
+.ipsBox {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.ipsList_reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ipsWidget.ipsWidget_vertical .ipsWidget_title,
+.ipsWidget.ipsWidget_horizontal .ipsWidget_title {
+    padding: 10px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    position: relative;
+    color: #828e99;
+    background: #ebedf0;
+    border-radius: 2px 2px 0px 0px;
+    /* font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.ipsPad,
+.ipsApp ul.ipsPad,
+.ipsApp ol.ipsPad {
+    padding: 15px;
+}
+
+
+/* home page and right pane css --ends */
 
 @media only screen and (max-width: 600px) {
     .center {

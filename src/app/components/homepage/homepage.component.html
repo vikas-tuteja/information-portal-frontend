@@ -1,2 +1,71 @@
 <app-header></app-header>
+
+<div class="center" style="height: 1220px;">
+    <div class="col-md-9 float-left">
+        <!-- Top Stories -->
+        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox " data-blockid="app_core_newsletter_9x20o3kzh" data-blockconfig="true" data-blocktitle="Newsletter Signup" data-blockerrormessage="This block cannot be shown. This could be because it needs configuring, is unable to show on this page, or will show after reloading this page."
+            data-controller="core.front.widgets.block">
+            <h3 class="ipsType_reset ipsWidget_title badge-head">
+                Top Stories
+            </h3>
+            <div class="home-widget-content">
+                <div class=" ipsPad badge-data">
+                    <div class="row" *ngFor="let item of images; index as i;">
+                        <div class="col-md-12 each-home-widget">
+                            <span class="float-left">
+                            <img class="image-col-3" src="{{item}}" onerror="this.src='/assets/images/default.jpeg'">
+                        </span>
+                            <!--/Card image-->
+                            <span class="float-left home-widget-data">
+                            <!--Card content-->
+                            <h5 class="pink-text">Culinary</h5>
+                            <span>
+                                Sed ut perspiciatis undeSed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </span>
+                            <br>
+                            <!-- <a mdbBtn class="float-right waves-light blue-bg" mdbWavesEffect>View</a> -->
+                            <span class="float-right"><a class="blue" href="#">Read More</a></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Top Audio Libraries -->
+        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox " data-blockid="app_core_newsletter_9x20o3kzh" data-blockconfig="true" data-blocktitle="Newsletter Signup" data-blockerrormessage="This block cannot be shown. This could be because it needs configuring, is unable to show on this page, or will show after reloading this page."
+            data-controller="core.front.widgets.block">
+            <h3 class="ipsType_reset ipsWidget_title badge-head">
+                Top Audio Libraries
+            </h3>
+            <div class="home-widget-content">
+                <div class=" ipsPad badge-data">
+                    <div class="row" *ngFor="let item of images; index as i;">
+                        <div class="col-md-12 each-home-widget">
+                            <span class="float-left col-md-4"><br>
+                                <audio controls style="width: -webkit-fill-available;"
+                                 src="http://127.0.0.1:8000/media/file_example_MP3_700KB.mp3" type="audio/mp3">
+                                  Your browser does not support the audio element.
+                                  </audio>
+                            </span>
+                            <!--/Card image-->
+                            <span class="float-left home-widget-data">
+                            <!--Card content-->
+                            <h5 class="pink-text">Culinary</h5>
+                            <span>
+                                Sed ut perspiciatis undeSed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </span>
+                            <br>
+                            <!-- <a mdbBtn class="float-right waves-light blue-bg" mdbWavesEffect>View</a> -->
+                            <span class="float-right"><a class="blue" href="#">Read More</a></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <app-right-panel></app-right-panel>
+</div>
 <app-footer></app-footer>
