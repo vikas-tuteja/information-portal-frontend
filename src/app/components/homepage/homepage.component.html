@@ -1,17 +1,64 @@
 <app-header></app-header>
-
-<div class="center" style="height: 1220px;">
+<div class="center" style="height: 2100px;">
     <div class="col-md-9 float-left">
-        <!-- Top Stories -->
-        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox " data-blockid="app_core_newsletter_9x20o3kzh" data-blockconfig="true" data-blocktitle="Newsletter Signup" data-blockerrormessage="This block cannot be shown. This could be because it needs configuring, is unable to show on this page, or will show after reloading this page."
-            data-controller="core.front.widgets.block">
+        <!-- Top Articles-->
+        <div class="ipsWidget ipsWidget_vertical ipsBox ">
             <h3 class="ipsType_reset ipsWidget_title badge-head">
-                Top Stories
+                Top Articles
             </h3>
+        </div>
+        <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'">
+            <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
+                    <mdb-card class="my-1">
+                        <!-- <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img> -->
+                        <img class="image-col-3" src="{{card.img}}" onerror="this.src='/assets/images/default.jpeg'" />
+                        <mdb-card-body>
+                            <mdb-card-title>
+                                <h4>{{card.title}}</h4>
+                            </mdb-card-title>
+                            <p>{{card.description}}</p>
+                            <span class="float-right"><a class="blue" href="#">Read More</a></span>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </mdb-carousel-item>
+        </mdb-carousel><br>
+
+        <!-- Top Blogs -->
+        <div class="ipsWidget ipsWidget_vertical ipsBox ">
+            <h3 class="ipsType_reset ipsWidget_title badge-head">
+                Popular Blogs
+            </h3>
+        </div>
+        <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'">
+            <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
+                    <mdb-card class="my-1">
+                        <img class="image-col-3" src="{{card.img}}" onerror="this.src='/assets/images/default.jpeg'" />
+                        <mdb-card-body>
+                            <mdb-card-title>
+                                <h4>{{card.title}}</h4>
+                            </mdb-card-title>
+                            <p>{{card.description}}</p>
+                            <span class="float-right"><a class="blue" href="#">Read More</a></span>
+                        </mdb-card-body>
+                    </mdb-card>
+                </div>
+            </mdb-carousel-item>
+        </mdb-carousel><br>
+
+        <!-- Latest News -->
+        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox ">
+            <h3 class="ipsType_reset ipsWidget_title badge-head">
+                Latest News
+            </h3>
+
             <div class="home-widget-content">
                 <div class=" ipsPad badge-data">
                     <div class="row" *ngFor="let item of images; index as i;">
                         <div class="col-md-12 each-home-widget">
+                            <div class="stamp"><img src="/assets/images/fake.png"></div>
                             <span class="float-left">
                             <img class="image-col-3" src="{{item}}" onerror="this.src='/assets/images/default.jpeg'">
                         </span>

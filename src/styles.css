@@ -142,7 +142,7 @@ hr {
     /* background-color: #c4c5c5; */
     background-color: #efefef;
     box-shadow: 2px 2px #8a8a8a;
-    margin-right: 10px;
+    margin: 0px 10px 10px 0px;
 }
 
 .badge-head {
@@ -215,6 +215,15 @@ li {
 .ipsApp ul.ipsPad,
 .ipsApp ol.ipsPad {
     padding: 15px;
+}
+
+.stamp {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    z-index: 100;
+    transform: rotate(-22deg);
+    margin: 0.8rem;
 }
 
 
