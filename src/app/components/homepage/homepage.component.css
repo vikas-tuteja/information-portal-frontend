@@ -1,0 +1,11 @@
+.carousel .carousel-indicators li {
+    border-radius: 50%;
+    cursor: pointer;
+    height: .625rem;
+    width: .625rem;
+    background-color: cadetblue;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}

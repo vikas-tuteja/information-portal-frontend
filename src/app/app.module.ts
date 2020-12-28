@@ -44,8 +44,7 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot(),
-
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

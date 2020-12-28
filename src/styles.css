@@ -19,11 +19,13 @@ body {
 }
 
 .blue-bg {
-    background-color: #3f729b !important;
+    /* background-color: #3f729b !important; */
+    background-color: cadetblue;
 }
 
 .blue {
-    color: #3f729b !important;
+    /* color: #3f729b !important; */
+    color: cadetblue;
 }
 
 .white {
@@ -155,7 +157,18 @@ hr {
     font-weight: 400;
 }
 
+.date-author {
+    padding: 0;
+    font-size: 0.9rem;
+    color: darkgray;
+    margin: 0;
+}
+
 li {
+    text-decoration: none;
+}
+
+a:hover {
     text-decoration: none;
 }
 
@@ -224,6 +237,16 @@ li {
     z-index: 100;
     transform: rotate(-22deg);
     margin: 0.8rem;
+}
+
+.footer-bg {
+    background: #fafafc;
+    color: #34444c;
+    position: relative;
+}
+
+.social-links-small a.fa {
+    font-size: 1rem !important;
 }
 
 

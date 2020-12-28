@@ -1,12 +1,17 @@
 .each-nav {
-    padding: 8px 20px 8px 0px;
-    font-size: 1.3rem;
+    padding: 8px 10px 8px 10px;
+    font-size: 1.4rem;
     font-weight: 400 !important;
-    margin: 10px 0px 10px 10px !important;
+    /* margin: 10px 0px 10px 10px !important; */
 }
 
 .nav-item>a {
     text-decoration: none;
+}
+
+li.nav-item.active {
+    /* border: 0.5px solid white !important; */
+    background-color: #4a8586 !important;
 }
 
 .active-pink-2 input[type=text]:focus:not([readonly]) {
