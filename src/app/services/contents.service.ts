@@ -15,10 +15,6 @@ export class ContentsService {
 
   /** GET products from the server */
   getContents(
-    // categorySlug: string = '',
-    // occasionSlug: string = '',
-    // emotionSlug: string = '',
-    // productForSlug: string = '',
     page: number = 1
   ): Observable<Contents> {
     return this.http
