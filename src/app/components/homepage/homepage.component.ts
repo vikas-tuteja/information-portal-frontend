@@ -37,6 +37,12 @@ export class HomepageComponent implements OnInit {
       description: 'Some quick example text to build on the card title and make up the bulk of the card content',
       buttonText: 'Read More',
       img: this.images[1]
+    },
+    {
+      title: 'Card Title 5',
+      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
+      buttonText: 'Read More',
+      img: this.images[2]
     }
   ];
   slides: any = [[]];

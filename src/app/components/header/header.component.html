@@ -9,54 +9,45 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
-
 <!--Navbar-->
 <div class="blue-bg">
     <mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
-
         <!-- Navbar brand -->
         <div class="center">
-            <!-- <mdb-navbar-brand><a class="navbar-brand white" href="#">Logo</a></mdb-navbar-brand> -->
-
-            <!-- Collapsible content -->
-            <!-- <links> -->
-
             <!-- Links -->
-            <ul class="navbar-nav full-width">
+            <ul class="navbar-nav full-width input-icons">
                 <li class="nav-item">
                     <a class="each-nav white" mdbWavesEffect href="/"><span class="pointer">Logo</span><span class="sr-only">(current)</span></a>
                 </li>
-                <!-- <li style="width:300px !important;" class="nav-item active"> -->
                 <!-- Search form -->
                 <form class="form-inline md-form form-sm active-pink-2">
                     <input style="width:400px !important;" class="form-control form-control-sm mr-3 w-75 white-bg" type="text" placeholder="Search" aria-label="Search" mdbInput>
-                    <span class="material-icons white">
-                            search
-                        </span>
+                    <!-- <i class="fa fa-xs fa-search icon" style="font-size: 20px;"></i> -->
                 </form>
-                <!-- </li> -->
-                <li class="nav-item active">
+                <li class="nav-item" [ngClass]="{'active': selectedPage === 'home'}">
                     <a class="each-nav white" mdbWavesEffect href="/"><span class="pointer">Home</span><span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]="{'active': selectedPage === 'latest-news'}">
                     <a class="each-nav white" mdbWavesEffect href="/latest-news"><span class="pointer">Latest News</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]="{'active': selectedPage === 'audio-library'}">
                     <a class="each-nav white" mdbWavesEffect href="/audio-library"><span class="pointer">Library</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]="{'active': selectedPage === 'our-mission'}">
                     <a class="each-nav white" mdbWavesEffect href="/our-mission">Our Mission</a>
                 </li>
+                <li class="nav-item" [ngClass]="{'active': selectedPage === 'about-us'}">
+                    <a class="each-nav white" mdbWavesEffect href="/about-us">About Us</a>
+                </li>
                 <!-- Dropdown -->
+                <li class="nav-item"><a class="each-nav white">More..</a></li>
                 <li class="nav-item " dropdown>
-                    <a dropdownToggle mdbWavesEffect type="button" class="each-nav dropdown-toggle white" mdbWavesEffect>
-                        <span class="pointer">More...</span><span class="caret"></span></a>
+                    <a dropdownToggle mdbWavesEffect type="button" class="each-nav dropdown-toggle white pointer" mdbWavesEffect>
+                        <span class="caret"></span></a>
                     <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                        <a class="dropdown-item" mdbWavesEffect href="/latest-news"><span class="pointer">News</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Articles</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Blogs</span></a>
-                        <!-- <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Our Mission</span></a> -->
-                        <a class="dropdown-item" mdbWavesEffect href="/about-us"><span class="pointer">About Us</span></a>
+                        <a class="dropdown-item" mdbWavesEffect href="#"><span class="pointer">Our Mission</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="/contact-us"><span class="pointer">Contact Us</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="/faqs"><span class="pointer">FAQs</span></a>
                         <!--div class="divider dropdown-divider"></div>
@@ -79,4 +70,5 @@
         </div>
     </mdb-navbar>
 </div>
+<br>
 <!--/.Navbar-->

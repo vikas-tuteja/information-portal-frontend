@@ -21,7 +21,7 @@
 
 .footer-links {
     /* margin: 2rem; */
-    margin: 20px 60px 20px 60px;
+    margin: 20px 50px 20px 50px;
     font-family: auto;
 }
 
@@ -38,4 +38,11 @@
     color: #34444c;
     font-size: 1.3rem;
     font-weight: 400;
+}
+
+.disclaimer {
+    padding: 0.7rem;
+    font-size: 1.3rem;
+    color: gray;
+    vertical-align: top;
 }

@@ -1,8 +1,10 @@
 .each-nav {
-    padding: 8px 10px 8px 10px;
     font-size: 1.4rem;
     font-weight: 400 !important;
-    /* margin: 10px 0px 10px 10px !important; */
+}
+
+.nav-item {
+    padding: 8px 10px 8px 10px;
 }
 
 .nav-item>a {
@@ -22,4 +24,8 @@ li.nav-item.active {
 .active-pink input[type=text] {
     border-bottom: 1px solid #f48fb1;
     box-shadow: 0 1px 0 0 #f48fb1;
+}
+
+.input-icons i {
+    position: absolute;
 }

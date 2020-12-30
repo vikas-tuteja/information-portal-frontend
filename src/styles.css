@@ -33,8 +33,8 @@ body {
 }
 
 .center {
-    margin: 1% 0% 1% 17%;
-    width: 66%;
+    margin: 0% 0% 0% 15%;
+    width: 70%;
 }
 
 .full-width {
@@ -42,7 +42,7 @@ body {
 }
 
 .pointer {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .fa {
@@ -162,6 +162,8 @@ hr {
     font-size: 0.9rem;
     color: darkgray;
     margin: 0;
+    width: 145px;
+    text-align: left;
 }
 
 li {
@@ -173,7 +175,7 @@ a:hover {
 }
 
 .image-col-3 {
-    width: 272px !important;
+    width: 280px !important;
     height: 192px !important;
 }
 

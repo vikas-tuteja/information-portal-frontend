@@ -20,6 +20,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
