@@ -15,7 +15,6 @@ export class LatestnewsComponent implements OnInit {
   next!: string;
   previous!: string;
   page!: number;
-  currentPage!: number;
   contents!: Content[];
 
   constructor(private route: ActivatedRoute, private contentService: ContentsService) {

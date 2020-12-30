@@ -157,12 +157,18 @@ hr {
     font-weight: 400;
 }
 
+.date-author-box {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+}
+
 .date-author {
     padding: 0;
     font-size: 0.9rem;
     color: darkgray;
     margin: 0;
-    width: 145px;
+    width: 180px;
     text-align: left;
 }
 
@@ -175,7 +181,7 @@ a:hover {
 }
 
 .image-col-3 {
-    width: 280px !important;
+    width: 292px !important;
     height: 192px !important;
 }
 
@@ -249,6 +255,27 @@ a:hover {
 
 .social-links-small a.fa {
     font-size: 1rem !important;
+}
+
+.main-card {
+    margin-bottom: 1rem;
+}
+
+.card-head {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    text-transform: capitalize;
+}
+
+.card-text {
+    text-align: left;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    display: inline-block;
+    font-size: 0.9rem !important;
+    overflow: hidden !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 

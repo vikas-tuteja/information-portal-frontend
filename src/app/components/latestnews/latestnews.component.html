@@ -1,12 +1,11 @@
 <app-header></app-header>
 <div class="row center">
-    <div class="col-md-3">
+    <div class="col-md-3 main-card" *ngFor="let content of contents;">
         <!--Card-->
-
         <mdb-card>
             <!--Card image-->
             <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <img class="image-col-3" src="" onerror="this.src='/assets/images/default.jpeg'">
+                <img class="image-col-3" onerror="this.src='/assets/images/default.jpeg'" src="{{content.summary_image}}">
                 <a>
                     <div class="mask rgba-white-slight"></div>
                 </a>
@@ -14,201 +13,16 @@
             <!--/Card image-->
             <mdb-card-body class="text-center">
                 <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
+                <h5 class="card-head">
+                    <mdb-icon fas icon="utensils"></mdb-icon>{{content.title}}</h5>
                 <mdb-card-text>
-                    Sed ut perspiciatis undeSed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a>
-                <!-- <span class="news-read-more"><a class="blue" href="/latest-news/culinery">Read More</a></span> -->
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <img class="image-col-3" src="/assets/images/sikh-farmer.jpeg">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                    {{content.summary}}
                 </mdb-card-text>
                 <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
+                <span class="float-left date-author-box"><i class="fa fa-clock-o date-author"> {{content.created_at|date:'medium'}} </i>
+                    <br><i class="fa fa-pencil-square-o date-author"> {{content.author}}</i></span>
+                <span class="news-read-more"><a class="blue" href="/latest-news/{{content.slug}}">Read More</a></span>
 
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <img class="image-col-3" src="/assets/images/farmer2.jpeg" />
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
-
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"></mdb-card-img>
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
-
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-
-</div>
-<br>
-<div class="row center">
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"></mdb-card-img>
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"></mdb-card-img>
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"></mdb-card-img>
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-    <div class="col-md-3">
-        <!--Card-->
-        <mdb-card>
-
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"></mdb-card-img>
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="pink-text">
-                    <mdb-icon fas icon="utensils"></mdb-icon> Culinary</h5>
-                <mdb-card-text>
-                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="news-read-more"><a class="blue" href="#">Read More</a></span>
             </mdb-card-body>
             <!--/.Card content-->
         </mdb-card>
