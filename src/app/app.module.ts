@@ -21,6 +21,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LatestnewsdetailComponent } from './components/latestnewsdetail/latestnewsdetail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     SigninComponent,
     SignupComponent,
     PaginationComponent,
-    RightPanelComponent
+    RightPanelComponent,
+    LatestnewsdetailComponent
   ],
   imports: [
     MatIconModule,

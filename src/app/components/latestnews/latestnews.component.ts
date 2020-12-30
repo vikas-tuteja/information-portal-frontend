@@ -21,7 +21,9 @@ export class LatestnewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => { this.page = params['page']; this.getContents(this.page || 1) })
+    this.route.queryParams.subscribe(params => { 
+      this.page = parseInt(params['page'] || 1);
+      this.getContents(this.page) })
   }
 
   getContents(page: number) {

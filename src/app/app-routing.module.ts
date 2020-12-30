@@ -7,6 +7,7 @@ import { ContentComponent } from './components/content/content.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LatestnewsComponent } from './components/latestnews/latestnews.component';
+import { LatestnewsdetailComponent } from './components/latestnewsdetail/latestnewsdetail.component';
 import { LibraryComponent } from './components/library/library.component';
 import { OurmissionComponent } from './components/ourmission/ourmission.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -15,6 +16,7 @@ import { SignupComponent } from './components/signup/signup.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'latest-news', component: LatestnewsComponent },
+  { path: 'latest-news/:slug', component: LatestnewsdetailComponent },
   { path: 'audio-library', component: LibraryComponent },
   { path: 'content', component: ContentComponent },
   { path: 'our-mission', component: OurmissionComponent },
