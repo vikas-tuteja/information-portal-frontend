@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Audio, Content } from 'src/app/models/content';
+import { ContentsService } from 'src/app/services/contents.service';
 
 @Component({
   selector: 'app-homepage',
@@ -6,46 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  constructor() { }
-  images = ["", "/assets/images/sikh-farmer.jpeg", "/assets/images/farmer2.jpeg", "https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"];
-  cards = [
-    {
-      title: 'Card Title 1',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[0]    },
-    {
-      title: 'Card Title 2',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[1]
-    },
-    {
-      title: 'Card Title 3',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[2]
-    },
-    {
-      title: 'Card Title 4',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[3]
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[1]
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[2]
-    }
-  ];
-  slides: any = [[]];
+  articles!: any[];
+  blogs!: any[];
+  news!: Content[];
+  audioLibrary!: Audio[];
+  no_of_cards = 3;
+
+  constructor(
+    private contentService: ContentsService
+  ) { }
+
   chunk(arr: any, chunkSize: number) {
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
@@ -54,7 +26,26 @@ export class HomepageComponent implements OnInit {
     return R;
   }
   ngOnInit(): void {
-    this.slides = this.chunk(this.cards, 3);
+    // this.slides = this.chunk(this.cards, 3);
+    // get articles
+    this.contentService.getCategoryWiseContent('articles').subscribe(data => {
+      this.articles = this.chunk(data.results, this.no_of_cards);
+    });
+
+    // get blogs
+    this.contentService.getCategoryWiseContent('blogs').subscribe(data => {
+      this.blogs = this.chunk(data.results, this.no_of_cards);
+    });
+
+    // get news
+    this.contentService.getCategoryWiseContent('news').subscribe(data => {
+      this.news = data.results;
+    });
+
+    // get audio library
+    this.contentService.getCategoryWiseLibrary().subscribe(data => {
+      this.audioLibrary = data.results;
+    });
   }
 
 }

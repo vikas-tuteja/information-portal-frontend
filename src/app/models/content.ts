@@ -14,20 +14,43 @@ export interface ContentDetail {
 }
 
 export interface Content {
-    id: number;
-    created_at: Date;
-    event_date: Date;
-    slug: string;
-    title: string;
-    summary: string;
-    summary_image: string;
-    views: number;
-    author: string;
-  }
+  id: number;
+  created_at: Date;
+  event_date: Date;
+  slug: string;
+  title: string;
+  summary: string;
+  summary_image: string;
+  views: number;
+  author: string;
+}
 
 export interface Contents {
-    results: Content[];
-    count: number;
-    next: string;
-    previous: string;
-  }
+  results: Content[];
+  count: number;
+  next: string;
+  previous: string;
+}
+
+export interface Audio {
+  id: number;
+  created_at: Date;
+  event_date: Date;
+  slug: string;
+  title: string;
+  summary: string;
+  summary_image: string;
+  views: number;
+  author: string;
+  audio_file: string;
+  size: number;
+  filetype: string;
+  
+}
+
+export interface AudioLibrary {
+  results: Audio[];
+  count: number;
+  next: string;
+  previous: string;
+}
