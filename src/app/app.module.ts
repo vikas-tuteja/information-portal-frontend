@@ -22,6 +22,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LatestnewsdetailComponent } from './components/latestnewsdetail/latestnewsdetail.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,10 @@ import { LatestnewsdetailComponent } from './components/latestnewsdetail/latestn
     AppRoutingModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-left',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

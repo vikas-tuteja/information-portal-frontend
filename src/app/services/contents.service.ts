@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { API } from '../constants/urls';
 import { AudioLibrary, ContentDetail, Contents } from '../models/content';
 
@@ -10,7 +10,8 @@ import { AudioLibrary, ContentDetail, Contents } from '../models/content';
 })
 export class ContentsService {
 
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient
   ) { }
 
   /** GET products from the server */

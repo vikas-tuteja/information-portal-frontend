@@ -9,34 +9,35 @@
             <form action="">
                 <h3>Registration Form</h3>
                 <div class="form-group">
-                    <div class="form-wrapper">
+                    <div class="form-wrapper required">
                         <label for="">First Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="first_name" id="first_name">
                     </div>
-                    <div class="form-wrapper">
+                    <div class="form-wrapper required">
                         <label for="">Last Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="last_name" id="last_name">
                     </div>
                 </div>
-                <div class="form-wrapper">
+                <div class="form-wrapper required">
                     <label for="">Email</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="email" id="email">
                 </div>
-                <div class="form-wrapper">
+                <div class="form-wrapper required">
                     <label for="">Mobile</label>
-                    <input type="mobile" class="form-control">
+                    <input type="mobile" class="form-control" name="mobile" id="mobile">
                 </div>
-                <div class="form-wrapper">
+                <div class="form-wrapper required">
                     <label for="">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="password" id="password">
                 </div>
-                <div class="form-wrapper">
+                <div class="form-wrapper required">
                     <label for="">Confirm Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="confirm_password" id="confirm_password">
                 </div>
-                <div class="checkbox">
+                <div class="">
                     <label>
-							<input type="checkbox"> I caccept the <a href="#">Terms of Use & Privacy Policy.</a>
+                            <input type="checkbox"  id="signup_checkbox" checked="checked">
+                             I caccept the <a href="#">Terms of Use & Privacy Policy.</a>
 							<span class="checkmark"></span>
 						</label>
                 </div>
@@ -45,7 +46,7 @@
 							Already have an account ? <a href="/signin">Click Here</a> to SignIn
 					</label>
                 </div>
-                <button>Register Now</button>
+                <button (click)="signUpPostTrigger()">Register Now</button>
             </form>
         </div>
     </div>

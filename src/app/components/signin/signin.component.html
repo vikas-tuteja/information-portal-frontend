@@ -9,45 +9,28 @@
         <div class="inner inner-signin">
             <form action="">
                 <h3>Signin Form</h3>
-                <!-- <div class="form-group">
-                    <div class="form-wrapper">
-                        <label for="">First Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="form-wrapper">
-                        <label for="">Last Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                </div> -->
-                <div class="form-wrapper">
+
+                <div class="form-wrapper required">
                     <label for="">Email/Mobile</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="username" id="username">
                 </div>
-                <!-- <div class="form-wrapper">
-                    <label for="">Mobile</label>
-                    <input type="number" class="form-control">
-                </div> -->
-                <div class="form-wrapper">
+                <div class="form-wrapper required">
                     <label for="">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="password" id="password">
                 </div>
-                <!-- <div class="form-wrapper">
-                    <label for="">Confirm Password</label>
-                    <input type="password" class="form-control">
-                </div> -->
-                <div class="checkbox">
+                <div class="">
                     <label>
-							<input type="checkbox"> I caccept the <a href="#">Terms of Use & Privacy Policy.</a>
+                            <input type="checkbox" id="signin_checkbox" checked="checked">
+                             I caccept the <a href="#">Terms of Use & Privacy Policy.</a>
 							<span class="checkmark"></span>
 						</label>
                 </div>
-
                 <div class="checkbox">
                     <label>
 							Don't have an account ? <a href="/signup">Click Here</a> to Register
 					</label>
                 </div>
-                <button>Signin</button>
+                <button (click)="signInPostTrigger()">Signin</button>
             </form>
         </div>
     </div>

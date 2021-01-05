@@ -19,11 +19,10 @@
                         <mdb-icon fas icon="utensils"></mdb-icon> <span class="card-head"></span>{{audio.title}}</h5><br>
                     <audio controls style="width: -webkit-fill-available;">
                         <source src="{{audio.audio_file}}" type="audio/{{audio.filetype}}">
-                        <!-- <source src="horse.mp3" type="audio/mpeg"> -->
                       Your browser does not support the audio element.
                       </audio><br>
-                    <mdb-card-text>
-                        Sed ut perspiciatis undeSed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                    <mdb-card-text class="card-text-library">
+                        <span>{{audio.summary}}</span>
                     </mdb-card-text>
                     <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a>
                 </mdb-card-body>

@@ -44,8 +44,7 @@ export interface Audio {
   author: string;
   audio_file: string;
   size: number;
-  filetype: string;
-  
+  filetype: string; 
 }
 
 export interface AudioLibrary {
