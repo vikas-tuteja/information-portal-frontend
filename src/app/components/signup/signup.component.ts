@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
       this.userSerivce.signUpPost(data
       ).subscribe(data => {
         if (data.status == true) {
-          this.sharedService.setAuthUser(data);
+          this.userSerivce.setAuthUser(data);
           this.toastr.success(data.message);
           setTimeout(() => {
             window.location.href = '/';

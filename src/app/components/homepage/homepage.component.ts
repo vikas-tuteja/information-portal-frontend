@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { isEmpty } from 'rxjs/operators';
 import { Audio, Content } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
+import { SharedService } from 'src/app/services/shared.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-homepage',
@@ -13,9 +16,11 @@ export class HomepageComponent implements OnInit {
   news!: Content[];
   audioLibrary!: Audio[];
   no_of_cards = 3;
+  isLoggedIn!: boolean;
 
   constructor(
-    private contentService: ContentsService
+    private contentService: ContentsService,
+    private sharedService: SharedService
   ) { }
 
   chunk(arr: any, chunkSize: number) {
@@ -46,6 +51,8 @@ export class HomepageComponent implements OnInit {
     this.contentService.getCategoryWiseLibrary().subscribe(data => {
       this.audioLibrary = data.results;
     });
-  }
 
+    // cheked if login
+    this.isLoggedIn = this.sharedService.isLoggedIn();
+  }
 }

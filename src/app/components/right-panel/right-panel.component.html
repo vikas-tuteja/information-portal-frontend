@@ -36,13 +36,12 @@
                 We are an NGO that works towards spreading awareness and exposing fake news, etc. Kindly support us by donating.<br>
             </div>
             <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>Donate</a> -->
-            <button>Donate</button>
+            <button (click)="donate()">Donate</button>
         </div>
     </div>
     <br>
     <!-- SignIn/Register -->
-    <div class="ipsWidget ipsWidget_vertical ipsBox " data-blockid="app_core_newsletter_9x20o3kzh" data-blockconfig="true" data-blocktitle="Newsletter Signup" data-blockerrormessage="This block cannot be shown. This could be because it needs configuring, is unable to show on this page, or will show after reloading this page."
-        data-controller="core.front.widgets.block">
+    <div class="ipsWidget ipsWidget_vertical ipsBox " *ngIf="!isLoggedIn">
         <h3 class="ipsType_reset ipsWidget_title badge-head">
             SignIn/Register
         </h3>

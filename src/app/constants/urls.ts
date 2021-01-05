@@ -10,8 +10,8 @@ export class API {
     return `${BACKEND_URL}api/content/${slug}/`;
   }
 
-  static GET_CATEGORY_WISE_CONTENT(category_slug: string) {
-    return `${BACKEND_URL}api/contents/?category=${category_slug}`;
+  static GET_CATEGORY_WISE_CONTENT(page: number, category_slug: string) {
+    return `${BACKEND_URL}api/contents/?page=${page}&category=${category_slug}`;
   }
 
   static GET_CATEGORY_WISE_AUDIOLIBRARY(category_slug: string = '') {

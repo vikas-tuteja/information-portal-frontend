@@ -345,6 +345,11 @@ a:hover {
 }
 
 
+/* .ngx-toast-class {
+    font-size: 1rem;
+} */
+
+
 /* home page and right pane css --ends */
 
 @media only screen and (max-width: 600px) {

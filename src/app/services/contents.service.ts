@@ -37,11 +37,11 @@ export class ContentsService {
       )
   }
 
-  getCategoryWiseContent(category_slug: string
+  getCategoryWiseContent(page: number, category_slug: string
   ): Observable<Contents> {
     return this.http
       .get<Contents>(
-        API.GET_CATEGORY_WISE_CONTENT(category_slug)
+        API.GET_CATEGORY_WISE_CONTENT(page, category_slug)
       )
       .pipe(
         tap((_) => this.log('fetched contents'))

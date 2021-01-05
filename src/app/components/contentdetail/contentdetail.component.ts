@@ -5,10 +5,10 @@ import { ContentsService } from 'src/app/services/contents.service';
 
 @Component({
   selector: 'app-latestnewsdetail',
-  templateUrl: './latestnewsdetail.component.html',
-  styleUrls: ['./latestnewsdetail.component.css']
+  templateUrl: './contentdetail.component.html',
+  styleUrls: ['./contentdetail.component.css']
 })
-export class LatestnewsdetailComponent implements OnInit {
+export class ContentDetailComponent implements OnInit {
   slug!: string;
   contentDetail!: SafeHtml;
   title!: string;

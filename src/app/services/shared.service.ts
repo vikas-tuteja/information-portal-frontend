@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) { }
 
   // to check all values in a hash and return false if any empty
   validate(data: any) {
@@ -24,17 +27,9 @@ export class SharedService {
     return elem.checked
   }
 
-  // set user name and token in localstorage
-  setAuthUser(response: any) {
-    localStorage.setItem(
-      'user',
-      JSON.stringify({ token: response.token, name: response.name })
-    );
-  }
-
-  // get username and token from localstorage
-  getAuthUser() {
-    return JSON.parse(
-      localStorage.getItem('user') || '');
+  // check if logged in
+  isLoggedIn() {
+    const userObj = this.userService.getAuthUser();
+    return !(userObj?.token==="");
   }
 }
