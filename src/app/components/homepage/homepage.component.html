@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="center" style="height: 2300px;">
+<div class="center" style="height: 2500px;">
     <div class="col-md-9 float-left">
         <!-- Top Articles-->
         <div class="ipsWidget ipsWidget_vertical ipsBox ">
@@ -14,7 +14,7 @@
             <mdb-carousel-item *ngFor="let item of articles; let i = index">
                 <div class=" min-height col-md-4" *ngFor="let card of item; let cardIndex = index">
                     <mdb-card class="my-1">
-                        <img class="image-col-3" src="{{card.summary_image}}" onerror="this.src='/assets/images/default.jpeg'" />
+                        <img class="image-col-3 img-no-padding" src="{{card.summary_image}}" onerror="this.src='/assets/images/default.jpeg'" />
                         <mdb-card-body>
                             <mdb-card-title>
                                 <h4 class="card-head">{{card.title}}</h4>
@@ -44,7 +44,7 @@
             <mdb-carousel-item *ngFor="let item of blogs; let i = index">
                 <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
                     <mdb-card class="my-1">
-                        <img class="image-col-3" src="{{card.summary_image}}" onerror="this.src='/assets/images/default.jpeg'" />
+                        <img class="image-col-3 img-no-padding" src="{{card.summary_image}}" onerror="this.src='/assets/images/default.jpeg'" />
                         <mdb-card-body>
                             <mdb-card-title>
                                 <h4 class="card-head">{{card.title}}</h4>
@@ -70,9 +70,9 @@
                 <div class=" ipsPad badge-data">
                     <div class="row" *ngFor="let item of news; index as i;">
                         <div class="col-md-12 each-home-widget">
-                            <div class="stamp"><img src="/assets/images/fake.png"></div>
+                            <div class="stamp"><img class="img-no-padding" src="/assets/images/fake.png"></div>
                             <span class="float-left">
-                            <img class="image-col-3" src="{{item.summary_image}}" onerror="this.src='/assets/images/default.jpeg'">
+                            <img class="image-col-3 img-no-padding" src="{{item.summary_image}}" onerror="this.src='/assets/images/default.jpeg'">
                         </span>
                             <!--/Card image-->
                             <span class="float-left home-widget-data">

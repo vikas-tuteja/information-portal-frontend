@@ -1,33 +1,37 @@
 <app-header></app-header>
-<div class="row center">
-    <div class="col-md-3 main-card" *ngFor="let content of contents;">
-        <!--Card-->
-        <mdb-card>
-            <!--Card image-->
-            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                <img class="image-col-3" onerror="this.src='/assets/images/default.jpeg'" src="{{content.summary_image}}">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-            <mdb-card-body class="text-center">
-                <!--Card content-->
-                <h5 class="card-head">
-                    <mdb-icon fas icon="utensils"></mdb-icon>{{content.title}}</h5>
-                <mdb-card-text>
-                    {{content.summary}}
-                </mdb-card-text>
-                <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
-                <span class="float-left date-author-box"><i class="fa fa-clock-o date-author"> {{content.created_at|date:'medium'}} </i>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="col-md-3 main-card float-left" *ngFor="let content of contents;">
+            <!--Card-->
+            <mdb-card>
+                <!--Card image-->
+                <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+                    <img class="image-col-3 img-no-padding" onerror="this.src='/assets/images/default.jpeg'" src="{{content.summary_image}}">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--/Card image-->
+                <mdb-card-body class="text-center">
+                    <!--Card content-->
+                    <h5 class="card-head">
+                        <mdb-icon fas icon="utensils"></mdb-icon>{{content.title}}</h5>
+                    <mdb-card-text>
+                        {{content.summary}}
+                    </mdb-card-text>
+                    <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a> -->
+                    <span class="float-left date-author-box"><i class="fa fa-clock-o date-author"> {{content.created_at|date:'medium'}} </i>
                     <br><i class="fa fa-pencil-square-o date-author"> {{content.author}}</i></span>
-                <span class="news-read-more"><a class="blue" href="/latest-news/{{content.slug}}">Read More</a></span>
+                    <span class="news-read-more"><a class="blue" href="/latest-news/{{content.slug}}">Read More</a></span>
 
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
+                </mdb-card-body>
+                <!--/.Card content-->
+            </mdb-card>
+            <!--/.Card-->
+        </div>
     </div>
+    <div class="col-md-2"></div>
 </div>
 <div class="pagination left">
     <app-pagination *ngIf="totalCount" [currentPage]="page" [totalCount]="totalCount" [next]="next" [previous]="previous" class="full-width pagination-bar"></app-pagination>

@@ -42,7 +42,7 @@ export class HomepageComponent implements OnInit {
       this.news = data.results;
     });
 
-    // get audio library
+    // get audio librarys
     this.contentService.getCategoryWiseLibrary().subscribe(data => {
       this.audioLibrary = data.results;
     });

@@ -10,6 +10,18 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+iframe {
+    padding: 1rem;
+}
+
+img {
+    padding: 1rem
+}
+
+.img-no-padding {
+    padding: 0rem !important;
+}
+
 .btn {
     padding: .63rem 1.60rem !important;
 }
@@ -33,7 +45,7 @@ body {
 }
 
 .center {
-    margin: 0% 0% 0% 15%;
+    margin: 0% 15% 0% 15%;
     width: 70%;
 }
 
@@ -264,6 +276,11 @@ a:hover {
 .card-body {
     padding: 0.25rem !important;
     height: 250px;
+}
+
+.card-body-library {
+    padding: 0.25rem !important;
+    height: 300px;
 }
 
 .card-head {
