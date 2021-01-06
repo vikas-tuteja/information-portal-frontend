@@ -5,7 +5,7 @@
         <div class="heading">{{title}}</div>
         <span class="float-left date-author-box-content">Written by 
             <i class="fa fa-pencil-square-o date-author-content"> {{author}}</i>at </span>
-        <i class="fa fa-clock-o date-author-content">  {{createdAt|date:'medium'}} </i>
+        <i class="fa fa-clock-o date-author-content">  {{createdAt|date:'MMM dd yyyy, HH:mm'}} </i>
         <hr>
         <div class="content-data" [innerHTML]=contentDetail></div>
         <div class="content-data"><span>Views:&nbsp;&nbsp;{{views}}<i class="fa fa-eye" aria-hidden="true"></i><br>

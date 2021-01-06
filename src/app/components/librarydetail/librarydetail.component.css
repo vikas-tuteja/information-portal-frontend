@@ -133,14 +133,14 @@ a {
 }
 
 .body__info {
-    padding-top: 1.5rem;
-    padding-bottom: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
     text-align: center;
 }
 
 .info__album,
 .info__song {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
 }
 
 .info__artist,
@@ -161,7 +161,8 @@ a {
 }
 
 .body__buttons {
-    padding-top: 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
 }
 
 .list--buttons {
@@ -225,8 +226,8 @@ a {
 }
 
 .player__footer {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
 }
 
 .list--footer a {
@@ -236,4 +237,8 @@ a {
 .list--footer a:focus,
 .list--footer a:hover {
     opacity: 0.9;
+}
+
+.summary-ht {
+    height: 30rem;
 }

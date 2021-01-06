@@ -75,7 +75,7 @@
                             <img class="image-col-3 img-no-padding" src="{{item.summary_image}}" onerror="this.src='/assets/images/default.jpeg'">
                         </span>
                             <!--/Card image-->
-                            <span class="float-left home-widget-data">
+                            <span class="float-left home-widget-data col-md-8">
                             <!--Card content-->
                             <h5 class="pink-text card-head">{{item.title}}</h5>
                             <span class="card-text-3" style="height: 80px;">
@@ -104,24 +104,23 @@
                 <div class=" ipsPad badge-data">
                     <div class="row" *ngFor="let item of audioLibrary; index as i;">
                         <div class="col-md-12 each-home-widget">
-                            <span class="float-left col-md-4"><br>
+                            <span class="float-left col-md-2"><br>
                                 <!-- <audio controls style="width: -webkit-fill-available;"
                                  src="{{item.audio_file}}" type="audio/mp3">
                                   Your browser does not support the audio element.
                                   </audio> -->
                                   <a href="/audio-library/{{item.slug}}">
-                                    <img class="img-no-padding" src="{{item.summary_image}}" onerror="this.src='/assets/images/default_audio.png'">
+                                    <img class="img-no-padding audio-image" src="{{item.summary_image}}" onerror="this.src='/assets/images/default_audio4.png'">
                                   </a>
                             </span>
                             <!--/Card image-->
-                            <span class="float-left home-widget-data">
+                            <span class="float-left home-widget-data col-md-10">
                             <!--Card content-->
                             <h5 class="pink-text card-head">{{item.title}}</h5>
                             <span class="card-text-1">
                                 {{item.summary}}                               
                             </span>
                             <br>
-                            <!-- <a mdbBtn class="float-right waves-light blue-bg" mdbWavesEffect>View</a> -->
                             <span class="float-left">
                                 <i class="fa fa-clock-o date-author"> {{item.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 &nbsp;<i class="fa fa-pencil-square-o date-author"> {{item.author}}</i>

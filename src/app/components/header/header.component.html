@@ -31,7 +31,7 @@
                     <a class="each-nav white" mdbWavesEffect href="/latest-news"><span class="pointer">Latest News</span></a>
                 </li>
                 <li class="nav-item" [ngClass]="{'active': selectedPage === 'audio-library'}">
-                    <a class="each-nav white" mdbWavesEffect href="/audio-library"><span class="pointer">Library</span></a>
+                    <a class="each-nav white" mdbWavesEffect href="/audio-library"><span class="pointer">Audio Books</span></a>
                 </li>
                 <li class="nav-item" [ngClass]="{'active': selectedPage === 'our-mission'}">
                     <a class="each-nav white" mdbWavesEffect href="/our-mission">Our Mission</a>
@@ -47,11 +47,13 @@
                     <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
                         <a class="dropdown-item" mdbWavesEffect href="/top-articles"><span class="pointer">Articles</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="/popular-blogs"><span class="pointer">Blogs</span></a>
-                        <a class="dropdown-item" mdbWavesEffect href="/our-mission"><span class="pointer">Our Mission</span></a>
+                        <!-- <a class="dropdown-item" mdbWavesEffect href="/our-mission"><span class="pointer">Our Mission</span></a> -->
                         <a class="dropdown-item" mdbWavesEffect href="/contact-us"><span class="pointer">Contact Us</span></a>
                         <a class="dropdown-item" mdbWavesEffect href="/faqs"><span class="pointer">FAQs</span></a>
-                        <div *ngIf="isLoggedIn" class="divider dropdown-divider"></div>
+                        <div class="divider dropdown-divider"></div>
                         <a *ngIf="isLoggedIn" class="dropdown-item waves-light" mdbWavesEffect (click)="SignOut()">Sign Out</a>
+                        <a *ngIf="!isLoggedIn" class="dropdown-item waves-light" mdbWavesEffect href="/signin">Sign In</a>
+                        <a *ngIf="!isLoggedIn" class="dropdown-item waves-light" mdbWavesEffect href="/signup">Register</a>
                     </div>
                 </li>
             </ul>

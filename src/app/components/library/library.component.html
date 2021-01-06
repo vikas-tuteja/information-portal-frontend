@@ -22,12 +22,12 @@
                       Your browser does not support the audio element.
                       </audio>-->
                     <a href="/audio-library/{{audio.slug}}">
-                        <img class="img-no-padding audio-image" src="{{audio.summary_image}}" onerror="this.src='/assets/images/default_audio.png'">
+                        <img class="img-no-padding audio-image" src="{{audio.summary_image}}" onerror="this.src='/assets/images/default_audio4.png'">
                     </a>
-                    <mdb-card-text class="card-text card-summary-ht">
+                    <mdb-card-text class="card-text-library card-summary-ht">
                         <span class="">{{audio.summary}}</span>
                     </mdb-card-text>
-                    <span class="float-left date-author-box-big"><i class="fa fa-clock-o date-author"> {{audio.created_at|date:'medium'}} </i>
+                    <span class="float-left date-author-box-big"><i class="fa fa-clock-o date-author"> {{audio.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                         <br><i class="fa fa-pencil-square-o date-author"> {{audio.author}}</i></span>
                     <a mdbBtn class="waves-light blue-bg white news-read-more" href="/audio-library/{{audio.slug}}">Listen</a>
                 </mdb-card-body>

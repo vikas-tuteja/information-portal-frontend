@@ -213,7 +213,7 @@ a:hover {
 }
 
 .home-widget-data {
-    width: 580px;
+    /* width: 580px; */
     padding: 1rem;
 }
 
@@ -357,6 +357,10 @@ a:hover {
     margin: 1.5rem 0 1.5rem 0;
 }
 
+.content-data-summary {
+    margin-left: 2rem !important;
+}
+
 .whatsapp-green {
     color: #49d849;
 }
@@ -367,10 +371,9 @@ a:hover {
     display: inline;
 }
 
-
-/* .ngx-toast-class {
-    font-size: 1rem;
-} */
+.audio-image {
+    width: 100px;
+}
 
 
 /* home page and right pane css --ends */
