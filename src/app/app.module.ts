@@ -22,6 +22,8 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ContentDetailComponent } from './components/contentdetail/contentdetail.component';
 import { ToastrModule } from 'ngx-toastr';
+import { LibraryDetailComponent } from './components/librarydetail/librarydetail.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ToastrModule } from 'ngx-toastr';
     SignupComponent,
     PaginationComponent,
     RightPanelComponent,
-    ContentDetailComponent
+    ContentDetailComponent,
+    LibraryDetailComponent
   ],
   imports: [
     MatIconModule,

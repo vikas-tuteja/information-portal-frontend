@@ -18,6 +18,8 @@ export class RightPanelComponent implements OnInit {
 
   ngOnInit(): void {
     // check if login
+    debugger;
+    
     this.isLoggedIn = this.sharedService.isLoggedIn();
   }
 

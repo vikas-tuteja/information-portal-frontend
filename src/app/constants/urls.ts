@@ -18,6 +18,10 @@ export class API {
     return `${BACKEND_URL}api/librarys/?category=${category_slug}`;
   }
 
+  static GET_LIBRARY_DETAIL(slug: string) {
+    return `${BACKEND_URL}api/library/${slug}/`;
+  }
+
   public static POST_SIGNUP = `${BACKEND_URL}myaccount/signup/`;
   public static POST_SIGNIN = `${BACKEND_URL}myaccount/signin/`;
 }

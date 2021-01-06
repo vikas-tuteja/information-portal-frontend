@@ -45,7 +45,7 @@ img {
 }
 
 .center {
-    margin: 0% 15% 0% 15%;
+    margin: 0% 15% 0% 15% !important;
     width: 70%;
 }
 
@@ -175,12 +175,18 @@ hr {
     bottom: 0.5rem;
 }
 
+.date-author-box-big {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+}
+
 .date-author {
     padding: 0;
     font-size: 0.9rem;
     color: darkgray;
     margin: 0;
-    width: 180px;
+    width: 200px;
     text-align: left;
 }
 
@@ -278,11 +284,6 @@ a:hover {
     height: 250px;
 }
 
-.card-body-library {
-    padding: 0.25rem !important;
-    height: 300px;
-}
-
 .card-head {
     font-size: 1.4rem;
     padding: 0.5rem;
@@ -296,7 +297,7 @@ a:hover {
     font-size: 1rem !important;
     overflow: hidden !important;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
 
@@ -308,6 +309,28 @@ a:hover {
     overflow: hidden !important;
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.card-text-3 {
+    text-align: left;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    display: inline-block;
+    font-size: 1rem !important;
+    overflow: hidden !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-text-1 {
+    text-align: left;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    display: inline-block;
+    font-size: 1rem !important;
+    overflow: hidden !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 

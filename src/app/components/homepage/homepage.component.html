@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="center" style="height: 2500px;">
+<div class="center" style="height: 2400px;">
     <div class="col-md-9 float-left">
         <!-- Top Articles-->
         <div class="ipsWidget ipsWidget_vertical ipsBox ">
@@ -21,10 +21,10 @@
                             </mdb-card-title>
                             <p class="card-text">{{card.summary}}</p>
                             <span class="float-left date-author-box">
-                                <i class="fa fa-clock-o date-author"> {{card.created_at|date:'medium'}} </i>
+                                <i class="fa fa-clock-o date-author"> {{card.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 &nbsp;<i class="fa fa-pencil-square-o date-author"> {{card.author}}</i>
                             </span>
-                            <span class="float-right news-read-more"><a class="blue" href="#">Read More</a></span>
+                            <span class="float-right news-read-more"><a class="blue" href="/top-articles/{{card.slug}}">Read More</a></span>
                         </mdb-card-body>
                     </mdb-card>
                 </div>
@@ -51,10 +51,10 @@
                             </mdb-card-title>
                             <p class="card-text">{{card.summary}}</p>
                             <span class="float-left  date-author-box">
-                                <i class="fa fa-clock-o date-author"> {{card.created_at|date:'medium'}} </i>
+                                <i class="fa fa-clock-o date-author"> {{card.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 <br><i class="fa fa-pencil-square-o date-author"> {{card.author}}</i>
                             </span>
-                            <span class="float-right news-read-more"><a class="blue" href="/latest-news/{{card.slug}}">Read More</a></span>
+                            <span class="float-right news-read-more"><a class="blue" href="/popular-blogs/{{card.slug}}">Read More</a></span>
                         </mdb-card-body>
                     </mdb-card>
                 </div>
@@ -78,12 +78,12 @@
                             <span class="float-left home-widget-data">
                             <!--Card content-->
                             <h5 class="pink-text card-head">{{item.title}}</h5>
-                            <span>
+                            <span class="card-text-3" style="height: 80px;">
                                 {{item.summary}}
                             </span>
                             <br>
                             <span class="float-left">
-                                <i class="fa fa-clock-o date-author"> {{item.created_at|date:'medium'}} </i>
+                                <i class="fa fa-clock-o date-author"> {{item.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 &nbsp;<i class="fa fa-pencil-square-o date-author"> {{item.author}}</i>
                             </span>
                             <span class="float-right"><a class="blue" href="/latest-news/{{item.slug}}">Read More</a></span>
@@ -96,8 +96,7 @@
         </div>
         <br>
         <!-- Top Audio Libraries -->
-        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox " data-blockid="app_core_newsletter_9x20o3kzh" data-blockconfig="true" data-blocktitle="Newsletter Signup" data-blockerrormessage="This block cannot be shown. This could be because it needs configuring, is unable to show on this page, or will show after reloading this page."
-            data-controller="core.front.widgets.block">
+        <div class="home-widget ipsWidget ipsWidget_vertical ipsBox ">
             <h3 class="ipsType_reset ipsWidget_title badge-head">
                 Top Audio Libraries
             </h3>
@@ -106,22 +105,25 @@
                     <div class="row" *ngFor="let item of audioLibrary; index as i;">
                         <div class="col-md-12 each-home-widget">
                             <span class="float-left col-md-4"><br>
-                                <audio controls style="width: -webkit-fill-available;"
+                                <!-- <audio controls style="width: -webkit-fill-available;"
                                  src="{{item.audio_file}}" type="audio/mp3">
                                   Your browser does not support the audio element.
-                                  </audio>
+                                  </audio> -->
+                                  <a href="/audio-library/{{item.slug}}">
+                                    <img class="img-no-padding" src="{{item.summary_image}}" onerror="this.src='/assets/images/default_audio.png'">
+                                  </a>
                             </span>
                             <!--/Card image-->
                             <span class="float-left home-widget-data">
                             <!--Card content-->
                             <h5 class="pink-text card-head">{{item.title}}</h5>
-                            <span>
+                            <span class="card-text-1">
                                 {{item.summary}}                               
                             </span>
                             <br>
                             <!-- <a mdbBtn class="float-right waves-light blue-bg" mdbWavesEffect>View</a> -->
                             <span class="float-left">
-                                <i class="fa fa-clock-o date-author"> {{item.created_at|date:'medium'}} </i>
+                                <i class="fa fa-clock-o date-author"> {{item.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 &nbsp;<i class="fa fa-pencil-square-o date-author"> {{item.author}}</i>
                             </span>
                             <span class="float-right"><a class="blue" href="/audio-library/{{item.slug}}">Read More</a></span>

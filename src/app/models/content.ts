@@ -45,6 +45,8 @@ export interface Audio {
   audio_file: string;
   size: number;
   filetype: string; 
+  album_name: string;
+  singer_name: string;
 }
 
 export interface AudioLibrary {

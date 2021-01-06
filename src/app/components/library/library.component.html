@@ -16,15 +16,20 @@
                 <mdb-card-body class="text-center card-body-library">
                     <!--Card content-->
                     <h5 class="pink-text">
-                        <mdb-icon fas icon="utensils"></mdb-icon> <span class="card-head"></span>{{audio.title}}</h5><br>
-                    <audio controls style="width: -webkit-fill-available;">
+                        <mdb-icon fas icon="utensils"></mdb-icon> <span class="card-head">{{audio.title}}</span></h5><br>
+                    <!-- <audio controls style="width: -webkit-fill-available;">
                         <source src="{{audio.audio_file}}" type="audio/{{audio.filetype}}">
                       Your browser does not support the audio element.
-                      </audio><br>
-                    <mdb-card-text class="card-text-library">
-                        <span>{{audio.summary}}</span>
+                      </audio>-->
+                    <a href="/audio-library/{{audio.slug}}">
+                        <img class="img-no-padding audio-image" src="{{audio.summary_image}}" onerror="this.src='/assets/images/default_audio.png'">
+                    </a>
+                    <mdb-card-text class="card-text card-summary-ht">
+                        <span class="">{{audio.summary}}</span>
                     </mdb-card-text>
-                    <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>View</a>
+                    <span class="float-left date-author-box-big"><i class="fa fa-clock-o date-author"> {{audio.created_at|date:'medium'}} </i>
+                        <br><i class="fa fa-pencil-square-o date-author"> {{audio.author}}</i></span>
+                    <a mdbBtn class="waves-light blue-bg white news-read-more" href="/audio-library/{{audio.slug}}">Listen</a>
                 </mdb-card-body>
                 <!--/.Card content-->
             </mdb-card>

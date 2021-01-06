@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { API } from '../constants/urls';
-import { AudioLibrary, ContentDetail, Contents } from '../models/content';
+import { Audio, AudioLibrary, ContentDetail, Contents } from '../models/content';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +58,18 @@ export class ContentsService {
         tap((_) => this.log('fetched audio library'))
       )
   }
+
+  getLibraryDetail(slug: string
+  ): Observable<Audio> {
+    return this.http
+      .get<Audio>(
+        API.GET_LIBRARY_DETAIL(slug)
+      )
+      .pipe(
+        tap((_) => this.log('fetched library detail'))
+      )
+  }
+
   private log(message: string) {
     console.log(message);
   }

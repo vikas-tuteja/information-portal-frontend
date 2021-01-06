@@ -33,17 +33,17 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     // this.slides = this.chunk(this.cards, 3);
     // get articles
-    this.contentService.getCategoryWiseContent('articles').subscribe(data => {
+    this.contentService.getCategoryWiseContent(1, 'articles').subscribe(data => {
       this.articles = this.chunk(data.results, this.no_of_cards);
     });
 
     // get blogs
-    this.contentService.getCategoryWiseContent('blogs').subscribe(data => {
+    this.contentService.getCategoryWiseContent(1, 'blogs').subscribe(data => {
       this.blogs = this.chunk(data.results, this.no_of_cards);
     });
 
     // get news
-    this.contentService.getCategoryWiseContent('news').subscribe(data => {
+    this.contentService.getCategoryWiseContent(1, 'news').subscribe(data => {
       this.news = data.results;
     });
 

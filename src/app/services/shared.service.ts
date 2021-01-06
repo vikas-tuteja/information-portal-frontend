@@ -30,6 +30,6 @@ export class SharedService {
   // check if logged in
   isLoggedIn() {
     const userObj = this.userService.getAuthUser();
-    return !(userObj?.token==="");
+    return !(userObj?.token==="" || userObj?.token===undefined || userObj?.token===null);
   }
 }
