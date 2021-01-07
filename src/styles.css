@@ -386,8 +386,11 @@ a:hover {
   font-weight: bold;
 }
 
-/* home page and right pane css --ends */
+.row {
+  margin-right: 0 !important;
+}
 
+/* home page and right pane css --ends */
 @media only screen and (max-width: 600px) {
   .center {
     margin-left: 1%;
