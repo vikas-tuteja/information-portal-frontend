@@ -1,4 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MESSAGES } from 'src/app/constants/messages';
@@ -35,6 +40,17 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = this.sharedService.isLoggedIn();
   }
 
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      const res = document.getElementById('searchautocomplete-list');
+      const inp = document.getElementById('search') as HTMLInputElement;
+      if (res) {
+        res.style.visibility = 'hidden';
+        inp.value = '';
+      }
+    }
+  }
   // sign out
   SignOut() {
     this.userService.removeAuthUser();
@@ -132,6 +148,8 @@ export class HeaderComponent implements OnInit {
             const url = this.getElementsByTagName('input')[0].value;
             window.location.href = url;
           });
+
+          // this.inp.addEventListener<any>(e) {}
           a.appendChild(b);
         }
       }

@@ -45,8 +45,7 @@ li.nav-item.active {
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
-  left: 5rem;
-  right: 45rem;
+  width: 25rem;
 }
 
 .autocomplete-items div {
