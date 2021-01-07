@@ -22,6 +22,10 @@ export class API {
     return `${BACKEND_URL}api/library/${slug}/`;
   }
 
+  static GET_SEARCH_LIST(search_string: string) {
+    return `${BACKEND_URL}api/search/?search_string=${search_string}`;
+  }
+
   public static POST_SIGNUP = `${BACKEND_URL}myaccount/signup/`;
   public static POST_SIGNIN = `${BACKEND_URL}myaccount/signin/`;
 }

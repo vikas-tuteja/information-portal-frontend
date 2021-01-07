@@ -21,7 +21,7 @@
                         <source src="{{audio.audio_file}}" type="audio/{{audio.filetype}}">
                       Your browser does not support the audio element.
                       </audio>-->
-                    <a href="/audio-library/{{audio.slug}}">
+                    <a href="/audio-books/{{audio.slug}}">
                         <img class="img-no-padding audio-image" src="{{audio.summary_image}}" onerror="this.src='/assets/images/default_audio4.png'">
                     </a>
                     <mdb-card-text class="card-text-library card-summary-ht">
@@ -29,7 +29,7 @@
                     </mdb-card-text>
                     <span class="float-left date-author-box-big"><i class="fa fa-clock-o date-author"> {{audio.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                         <br><i class="fa fa-pencil-square-o date-author"> {{audio.author}}</i></span>
-                    <a mdbBtn class="waves-light blue-bg white news-read-more" href="/audio-library/{{audio.slug}}">Listen</a>
+                    <a mdbBtn class="waves-light blue-bg white news-read-more" href="/audio-books/{{audio.slug}}">Listen</a>
                 </mdb-card-body>
                 <!--/.Card content-->
             </mdb-card>

@@ -30,8 +30,8 @@ const routes: Routes = [
   { path: 'blogs/:slug', component: ContentDetailComponent },
 
   // Audio Library
-  { path: 'audio-library', component: LibraryComponent },
-  { path: 'audio-library/:slug', component: LibraryDetailComponent },
+  { path: 'audio-books', component: LibraryComponent },
+  { path: 'audio-books/:slug', component: LibraryDetailComponent },
 
   // static pages
   { path: 'our-mission', component: OurmissionComponent },

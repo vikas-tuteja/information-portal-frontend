@@ -109,7 +109,7 @@
                                  src="{{item.audio_file}}" type="audio/mp3">
                                   Your browser does not support the audio element.
                                   </audio> -->
-                                  <a href="/audio-library/{{item.slug}}">
+                                  <a href="/audio-books/{{item.slug}}">
                                     <img class="img-no-padding audio-image" src="{{item.summary_image}}" onerror="this.src='/assets/images/default_audio4.png'">
                                   </a>
                             </span>
@@ -125,11 +125,11 @@
                                 <i class="fa fa-clock-o date-author"> {{item.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
                                 &nbsp;<i class="fa fa-pencil-square-o date-author"> {{item.author}}</i>
                             </span>
-                            <span class="float-right"><a class="blue" href="/audio-library/{{item.slug}}">Read More</a></span>
+                            <span class="float-right"><a class="blue" href="/audio-books/{{item.slug}}">Read More</a></span>
                             </span>
                         </div>
                     </div>
-                    <span class="float-right badge-data blue pointer" style="padding-right: 12px;"><a class="blue" href="/audio-library">View All</a></span>
+                    <span class="float-right badge-data blue pointer" style="padding-right: 12px;"><a class="blue" href="/audio-books">View All</a></span>
                 </div>
             </div>
         </div>

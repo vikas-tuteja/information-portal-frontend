@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
-import { Content } from 'src/app/models/content';
+import { Content, SearchList } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
 
 @Component({
@@ -40,8 +40,6 @@ export class ContentComponent implements OnInit {
       }
       this.getContents(this.page, this.category);
     });
-
-
   }
 
   getContents(page: number, category: string) {
@@ -53,5 +51,4 @@ export class ContentComponent implements OnInit {
       this.contents = contents.results;
     })
   }
-
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { API } from '../constants/urls';
-import { Audio, AudioLibrary, ContentDetail, Contents } from '../models/content';
+import { Audio, AudioLibrary, ContentDetail, Contents, SearchList } from '../models/content';
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +67,14 @@ export class ContentsService {
       )
       .pipe(
         tap((_) => this.log('fetched library detail'))
+      )
+  }
+
+  getSearchList(search_string: string
+  ): Observable<SearchList> {
+    return this.http
+      .get<SearchList>(
+        API.GET_SEARCH_LIST(search_string)
       )
   }
 

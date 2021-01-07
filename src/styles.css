@@ -375,6 +375,9 @@ a:hover {
     width: 100px;
 }
 
+.strong {
+    font-weight: bold;
+}
 
 /* home page and right pane css --ends */
 

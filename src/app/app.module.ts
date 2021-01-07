@@ -24,7 +24,6 @@ import { ContentDetailComponent } from './components/contentdetail/contentdetail
 import { ToastrModule } from 'ngx-toastr';
 import { LibraryDetailComponent } from './components/librarydetail/librarydetail.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,7 @@ import { LibraryDetailComponent } from './components/librarydetail/librarydetail
     PaginationComponent,
     RightPanelComponent,
     ContentDetailComponent,
-    LibraryDetailComponent
+    LibraryDetailComponent,
   ],
   imports: [
     MatIconModule,

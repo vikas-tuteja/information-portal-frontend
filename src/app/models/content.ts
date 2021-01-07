@@ -44,7 +44,7 @@ export interface Audio {
   author: string;
   audio_file: string;
   size: number;
-  filetype: string; 
+  filetype: string;
   album_name: string;
   singer_name: string;
 }
@@ -54,4 +54,15 @@ export interface AudioLibrary {
   count: number;
   next: string;
   previous: string;
+}
+
+export interface SearchItem {
+  name: string;
+  sub_category__name: string;
+  href: string;
+}
+
+export interface SearchList {
+  results: SearchItem[];
+  count: number;
 }
