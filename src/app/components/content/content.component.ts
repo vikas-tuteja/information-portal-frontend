@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
-import { Content, SearchList } from 'src/app/models/content';
+import { ContentDetail } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ContentComponent implements OnInit {
   next!: string;
   previous!: string;
   page!: number;
-  contents!: Content[];
+  contents!: ContentDetail[];
   category!: string;
 
   constructor(

@@ -35,7 +35,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedPage = this.activatedRoute.snapshot.url[0]?.path || 'home';
-
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
   }
@@ -117,41 +116,34 @@ export class HeaderComponent implements OnInit {
       /*append the DIV element as a child of the autocomplete container:*/
       this.inp.parentNode?.appendChild(a);
       /*for each item in the that.searchListay...*/
+      let getHighlightedRow = this.sharedService.highlightText(val);
       for (i = 0; i < this.searchList.count; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        // debugger;
-        if (
-          // this.searchList.results[i].name.substr(0, val.length).toUpperCase() ==
-          // val.toUpperCase()
-          true
-        ) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement('DIV');
-          /*make the matching letters bold:*/
-          // b.innerHTML =
-          //   '<span class="strong">' +
-          //   this.searchList.results[i].name.substr(0, val.length) +
-          //   '</span>';
-          b.innerHTML += this.searchList.results[i].name;
-          b.innerHTML +=
-            '<span class="float-right strong"> in ' +
-            this.searchList.results[i].sub_category__name +
-            '</span>';
-          /*insert a input field that will hold the current that.searchListay item's value:*/
-          b.innerHTML +=
-            "<input type='hidden' value='" +
-            this.searchList.results[i].href +
-            "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener('click', function (e) {
-            /*insert the value for the autocomplete text field:*/
-            const url = this.getElementsByTagName('input')[0].value;
-            window.location.href = url;
-          });
+        /*create a DIV element for each matching element:*/
+        b = document.createElement('DIV');
+        /*make the matching letters bold:*/
+        // b.innerHTML =
+        //   '<span class="strong">' +
+        //   this.searchList.results[i].name.substr(0, val.length) +
+        //   '</span>';
+        b.innerHTML += getHighlightedRow(this.searchList.results[i].title);
+        b.innerHTML +=
+          '<span class="float-right strong"> in ' +
+          this.searchList.results[i].sub_category__name +
+          '</span>';
+        /*insert a input field that will hold the current that.searchListay item's value:*/
+        b.innerHTML +=
+          "<input type='hidden' value='" +
+          this.searchList.results[i].href +
+          "'>";
+        /*execute a function when someone clicks on the item value (DIV element):*/
+        b.addEventListener('click', function (e) {
+          /*insert the value for the autocomplete text field:*/
+          const url = this.getElementsByTagName('input')[0].value;
+          window.location.href = url;
+        });
 
-          // this.inp.addEventListener<any>(e) {}
-          a.appendChild(b);
-        }
+        // this.inp.addEventListener<any>(e) {}
+        a.appendChild(b);
       }
     });
   }

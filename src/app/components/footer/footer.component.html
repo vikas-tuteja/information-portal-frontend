@@ -24,7 +24,7 @@
             </ul>
             <ul class="footer-links float-left">
                 <li class="footer-links-item"><a href="/faqs">FAQs</a> </li>
-                <li class="footer-links-item"><a href="/signin">SignIn</a> / <a href="/signup">Register</a> </li>
+                <li *ngIf="!isLoggedIn" class="footer-links-item"><a href="/signin">SignIn</a> / <a href="/signup">Register</a> </li>
             </ul>
             <!-- end: comp footer-links -->
             <ul></ul>

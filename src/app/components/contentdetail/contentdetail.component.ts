@@ -16,6 +16,8 @@ export class ContentDetailComponent implements OnInit {
   author!: string;
   views!: number;
   url!: string;
+  is_fake!: boolean;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -37,6 +39,7 @@ export class ContentDetailComponent implements OnInit {
       this.author = data.author;
       this.createdAt = data.created_at;
       this.views = data.views;
+      this.is_fake = data.is_fake;
     });
   }
 }

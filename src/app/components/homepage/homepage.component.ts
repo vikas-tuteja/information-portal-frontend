@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { isEmpty } from 'rxjs/operators';
-import { Audio, Content } from 'src/app/models/content';
+import { Audio, ContentDetail } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
 import { SharedService } from 'src/app/services/shared.service';
-import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-homepage',
@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class HomepageComponent implements OnInit {
   articles!: any[];
   blogs!: any[];
-  news!: Content[];
+  news!: ContentDetail[];
   audioLibrary!: Audio[];
   no_of_cards = 3;
   isLoggedIn!: boolean;

@@ -11,22 +11,11 @@ export interface ContentDetail {
   views: 0,
   active: true,
   author: string;
-}
-
-export interface Content {
-  id: number;
-  created_at: Date;
-  event_date: Date;
-  slug: string;
-  title: string;
-  summary: string;
-  summary_image: string;
-  views: number;
-  author: string;
+  is_fake: boolean;
 }
 
 export interface Contents {
-  results: Content[];
+  results: ContentDetail[];
   count: number;
   next: string;
   previous: string;
@@ -57,7 +46,7 @@ export interface AudioLibrary {
 }
 
 export interface SearchItem {
-  name: string;
+  title: string;
   sub_category__name: string;
   href: string;
 }

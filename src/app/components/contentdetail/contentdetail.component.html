@@ -1,21 +1,37 @@
 <app-header></app-header>
 <div class="row content-detail">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="heading">{{title}}</div>
-        <span class="float-left date-author-box-content">Written by 
-            <i class="fa fa-pencil-square-o date-author-content"> {{author}}</i>at </span>
-        <i class="fa fa-clock-o date-author-content">  {{createdAt|date:'MMM dd yyyy, HH:mm'}} </i>
-        <hr>
-        <div class="content-data" [innerHTML]=contentDetail></div>
-        <div class="content-data"><span>Views:&nbsp;&nbsp;{{views}}<i class="fa fa-eye" aria-hidden="true"></i><br>
-            </span> Share:
-            <a href="whatsapp://send?text={{url}}" data-action="share/whatsapp/share" target="_blank">
-                <i class="whatsapp-green fa fa-whatsapp" aria-hidden="true"></i>
-                <i class="fa fa-facebook-f" aria-hidden="true"></i>
-                <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
-            </a>
-        </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="heading">{{ title }}</div>
+    <span class="float-left date-author-box-content"
+      >Written by
+      <i class="fa fa-pencil-square-o date-author-content"> {{ author }}</i
+      >at
+    </span>
+    <i class="fa fa-clock-o date-author-content">
+      {{ createdAt | date: "MMM dd yyyy, HH:mm" }}
+    </i>
+    <div *ngIf="is_fake" class="stamp-detail float-right">
+      <img class="img-no-padding" src="/assets/images/fake.png" />
     </div>
+    <hr />
+    <div class="content-data" [innerHTML]="contentDetail"></div>
+    <div class="content-data">
+      <span
+        >Views:&nbsp;&nbsp;{{ views
+        }}<i class="fa fa-eye" aria-hidden="true"></i><br />
+      </span>
+      Share:
+      <a
+        href="whatsapp://send?text={{ url }}"
+        data-action="share/whatsapp/share"
+        target="_blank"
+      >
+        <i class="whatsapp-green fa fa-whatsapp" aria-hidden="true"></i>
+        <i class="fa fa-facebook-f" aria-hidden="true"></i>
+        <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+      </a>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
