@@ -52,7 +52,8 @@ import { LibraryDetailComponent } from './components/librarydetail/librarydetail
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
     })
   ],
   providers: [],
