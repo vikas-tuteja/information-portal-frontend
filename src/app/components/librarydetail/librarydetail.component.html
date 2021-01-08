@@ -1,18 +1,25 @@
 <app-header></app-header>
 <div class="row content-detail">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="heading">{{content.title}}</div>
-        <span class="float-left date-author-box-content">Uploaded by 
-            <i class="fa fa-pencil-square-o date-author-content"> {{content.author}}</i>at </span>
-        <i class="fa fa-clock-o date-author-content">  {{content.created_at|date:'MMM dd yyyy, HH:mm'}} </i>
-        <hr>
-        <div class="col-md-6">
-            <div class="player__container float-left">
-                <div class="player__body">
-                    <div class="body__cover">
-                        <ul class="list list--cover">
-                            <!-- <li>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="">
+      <div class="heading">{{ content.title }}</div>
+      <span class="float-left date-author-box-content"
+        >Uploaded by
+        <i class="fa fa-pencil-square-o date-author-content">
+          {{ content.author }}</i
+        >at
+      </span>
+      <i class="fa fa-clock-o date-author-content">
+        {{ content.created_at | date: "MMM dd yyyy, HH:mm" }}
+      </i>
+      <hr />
+      <div class="col-md-6" style="width: 92% !important;">
+        <div class="player__container float-left">
+          <div class="player__body">
+            <div class="body__cover">
+              <ul class="list list--cover">
+                <!-- <li>
                             <a class="list__link" href=""><i class="fa fa-navicon"></i></a>
                         </li>
                         <li>
@@ -21,69 +28,92 @@
                         <li>
                             <a class="list__link" href=""><i class="fa fa-search"></i></a>
                         </li> -->
-                        </ul>
+              </ul>
 
-                        <img class="img-no-padding" src="{{content.summary_image}}" onerror="this.src='/assets/images/default_audio_player.jpg'" alt="Album cover" />
-                        <!-- <div class="range"></div> -->
-                    </div>
-
-                    <div class="body__info">
-                        <div class="info__album">{{content.title}}</div>
-
-                        <div class="info__song">{{content.album_name}}</div>
-
-                        <div class="info__artist">{{content.singer_name}}</div>
-                    </div>
-
-                    <div class="body__buttons">
-                        <ul class="list list--buttons">
-                            <!-- <li><a href="#" class="list__link"><i class="fa fa-step-backward"></i></a></li> -->
-                            <!-- <li><a href="{{content.audio_file}}" class="list__link"><i class="fa fa-play"></i></a></li> -->
-                            <li>
-                                <!-- <i class="fa fa-play"></i></audio>  -->
-                                <audio controls source src="{{content.audio_file}}">
-                              Your browser does not support the audio element.
-                              </audio>
-                            </li>
-                            <!-- <li><a href="#" class="list__link"><i class="fa fa-step-forward"></i></a></li> -->
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="player__footer">
-                    <ul class="list list--footer">
-                        <li><a class="list__link"><i class="fa fa-heart-o"></i></a></li>
-                        <li><a class="list__link"><i class="fa fa-random"></i></a></li>
-                        <li><a class="list__link"><i class="fa fa-undo"></i></a></li>
-                        <li><a class="list__link"><i class="fa fa-ellipsis-h"></i></a></li>
-                    </ul>
-                </div>
-
-                <div class="player__footer">
-                    <span><b>Size</b>: &nbsp;&nbsp;{{content.size}}&nbsp;&nbsp;Mb</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span><b>Type</b>: &nbsp;&nbsp;{{content.filetype}}</span>
-                </div>
-
+              <img
+                class="img-no-padding"
+                src="{{ content.summary_image }}"
+                onerror="this.src='/assets/images/default_audio_player.jpg'"
+                alt="Album cover"
+              />
+              <!-- <div class="range"></div> -->
             </div>
-        </div>
 
-        <div class="content-data content-data-summary col-md-6 float-left">
-            <div class="summary-ht">{{content.summary}}</div>
+            <div class="body__info">
+              <div class="info__album">{{ content.title }}</div>
 
-            <div class="content-data">
-                <b>Audio Book Name</b>: &nbsp;&nbsp;{{content.title}}
-                <br><b>Album</b>: &nbsp;&nbsp;{{content.album_name}}
-                <br> <b>Singer</b>: &nbsp;&nbsp;{{content.singer_name}}
-                <br>
-                <span>Views:&nbsp;&nbsp;{{content.views}}<i class="fa fa-eye" aria-hidden="true"></i><br>
-                </span> Share:
-                <a href="whatsapp://send?text={{url}}" data-action="share/whatsapp/share" target="_blank">
-                    <i class="whatsapp-green fa fa-whatsapp" aria-hidden="true"></i>
-                    <i class="fa fa-facebook-f" aria-hidden="true"></i>
-                    <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
-                </a>
+              <div class="info__song">{{ content.album_name }}</div>
+
+              <div class="info__artist">{{ content.singer_name }}</div>
             </div>
+
+            <div class="body__buttons">
+              <ul class="list list--buttons">
+                <!-- <li><a href="#" class="list__link"><i class="fa fa-step-backward"></i></a></li> -->
+                <!-- <li><a href="{{content.audio_file}}" class="list__link"><i class="fa fa-play"></i></a></li> -->
+                <li>
+                  <!-- <i class="fa fa-play"></i></audio>  -->
+                  <audio controls source src="{{ content.audio_file }}">
+                    Your browser does not support the audio element.
+                  </audio>
+                </li>
+                <!-- <li><a href="#" class="list__link"><i class="fa fa-step-forward"></i></a></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="player__footer">
+            <ul class="list list--footer">
+              <li>
+                <a class="list__link"><i class="fa fa-heart-o"></i></a>
+              </li>
+              <li>
+                <a class="list__link"><i class="fa fa-random"></i></a>
+              </li>
+              <li>
+                <a class="list__link"><i class="fa fa-undo"></i></a>
+              </li>
+              <li>
+                <a class="list__link"><i class="fa fa-ellipsis-h"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="player__footer">
+            <span
+              ><b>Size</b>: &nbsp;&nbsp;{{ content.size }}&nbsp;&nbsp;Mb</span
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><b>Type</b>: &nbsp;&nbsp;{{ content.filetype }}</span>
+          </div>
         </div>
+      </div>
     </div>
+
+    <div class="content-data-summary col-md-6 float-left">
+      <div class="summary-ht">{{ content.summary }}</div>
+
+      <div class="content-data">
+        <b>Audio Book Name</b>: &nbsp;&nbsp;{{ content.title }} <br /><b
+          >Album</b
+        >: &nbsp;&nbsp;{{ content.album_name }} <br />
+        <b>Singer</b>: &nbsp;&nbsp;{{ content.singer_name }}
+        <br />
+        <span
+          >Views:&nbsp;&nbsp;{{ content.views
+          }}<i class="fa fa-eye" aria-hidden="true"></i><br />
+        </span>
+        Share:
+        <a
+          href="whatsapp://send?text={{ url }}"
+          data-action="share/whatsapp/share"
+          target="_blank"
+        >
+          <i class="whatsapp-green fa fa-whatsapp" aria-hidden="true"></i>
+          <i class="fa fa-facebook-f" aria-hidden="true"></i>
+          <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

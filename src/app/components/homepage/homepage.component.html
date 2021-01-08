@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="center" style="height: 2400px">
+<div class="center homepage-ht">
   <div class="col-md-9 float-left">
     <!-- Top Articles-->
     <div class="ipsWidget ipsWidget_vertical ipsBox">
@@ -102,12 +102,14 @@
       </mdb-carousel-item> </mdb-carousel
     ><br />
 
-    <!-- Latest News -->
-    <div class="home-widget ipsWidget ipsWidget_vertical ipsBox">
+    <!-- Latest News for desktop -->
+    <div
+      class="home-widget ipsWidget ipsWidget_vertical ipsBox content-desktop"
+    >
       <h3 class="ipsType_reset ipsWidget_title badge-head">Latest News</h3>
       <div class="home-widget-content">
         <div class="ipsPad badge-data">
-          <div class="row" *ngFor="let item of news; index as i">
+          <div class="row" *ngFor="let item of newsDesktop; index as i">
             <div class="col-md-12 each-home-widget">
               <div *ngIf="item.is_fake" class="stamp">
                 <img class="img-no-padding" src="/assets/images/fake.png" />
@@ -152,6 +154,58 @@
       </div>
     </div>
     <br />
+    <!-- Latest News for mobile -->
+    <div class="content-mobile">
+      <div class="ipsWidget ipsWidget_vertical ipsBox">
+        <h3 class="ipsType_reset ipsWidget_title badge-head">Latest News</h3>
+      </div>
+      <span
+        class="float-right badge-data blue pointer"
+        style="padding-right: 12px"
+        >View All</span
+      >
+      <mdb-carousel
+        [isControls]="true"
+        class="badge-data carousel-multi-item multi-animation"
+        [type]="'carousel-multi-item'"
+        [animation]="'slide'"
+      >
+        <mdb-carousel-item *ngFor="let item of news; let i = index">
+          <div
+            class="col-md-4"
+            *ngFor="let card of item; let cardIndex = index"
+          >
+            <mdb-card class="my-1">
+              <img
+                class="image-col-3 img-no-padding"
+                src="{{ card.summary_image }}"
+                onerror="this.src='/assets/images/default.jpeg'"
+              />
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4 class="card-head">{{ card.title }}</h4>
+                </mdb-card-title>
+                <p class="card-text">{{ card.summary }}</p>
+                <span class="float-left date-author-box">
+                  <i class="fa fa-clock-o date-author">
+                    {{ card.created_at | date: "MMM dd yyyy, HH:mm" }}
+                  </i>
+                  <br /><i class="fa fa-pencil-square-o date-author">
+                    {{ card.author }}</i
+                  >
+                </span>
+                <span class="float-right news-read-more"
+                  ><a class="blue" href="/latest-news/{{ card.slug }}"
+                    >Read More</a
+                  ></span
+                >
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+        </mdb-carousel-item>
+      </mdb-carousel>
+    </div>
+    <br />
     <!-- Top Audio Libraries -->
     <div class="home-widget ipsWidget ipsWidget_vertical ipsBox">
       <h3 class="ipsType_reset ipsWidget_title badge-head">
@@ -161,7 +215,7 @@
         <div class="ipsPad badge-data">
           <div class="row" *ngFor="let item of audioLibrary; index as i">
             <div class="col-md-12 each-home-widget">
-              <span class="float-left col-md-2"
+              <span class="float-left col-md-2 audio-image-container"
                 ><br />
                 <!-- <audio controls style="width: -webkit-fill-available;"
                                  src="{{item.audio_file}}" type="audio/mp3">
@@ -176,7 +230,9 @@
                 </a>
               </span>
               <!--/Card image-->
-              <span class="float-left home-widget-data col-md-10">
+              <span
+                class="float-left home-widget-data col-md-10 audio-text-container"
+              >
                 <!--Card content-->
                 <h5 class="pink-text card-head">{{ item.title }}</h5>
                 <span class="card-text-1">

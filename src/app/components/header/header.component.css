@@ -1,10 +1,22 @@
+.header-left-panel {
+  width: 14% !important;
+}
+
+.header-center-panel {
+  width: 72% !important;
+}
+
+.search {
+  width: 25rem !important;
+}
+
 .each-nav {
   font-size: 1.3rem;
   font-weight: 300 !important;
 }
 
 .nav-item {
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 .nav-item > a {
@@ -43,7 +55,6 @@ li.nav-item.active {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   width: 25rem;
 }
@@ -65,4 +76,62 @@ li.nav-item.active {
 .autocomplete-active {
   background-color: cadetblue !important;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-left-panel {
+    width: 0% !important;
+  }
+
+  .header-center-panel {
+    width: 100% !important;
+  }
+
+  .search {
+    width: 17rem !important;
+  }
+
+  .navbar {
+    padding: 0.5rem;
+  }
+  .nav-item {
+    padding: 0 0.2rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    float: left;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .each-nav {
+    font-size: 1rem;
+  }
+
+  form {
+    margin: 0% !important;
+    padding: 0% !important;
+  }
+
+  .dropdown-menu {
+    left: -9rem !important;
+  }
+
+  /* autocomple items */
+
+  .autocomplete-items {
+    z-index: 99;
+    top: 100%;
+    width: 18rem;
+  }
+
+  .autocomplete-items div {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
 }

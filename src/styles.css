@@ -45,8 +45,8 @@ img {
 }
 
 .center {
-  margin: 0% 15% 0% 15% !important;
-  width: 70%;
+  margin: 0% 13% 0% 13% !important;
+  width: 74%;
 }
 
 .full-width {
@@ -146,17 +146,6 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
-}
-
-.desktop-badge {
-  width: 110px;
-  height: 110px;
-  padding-top: 18px;
-  /* background-color: #cfefff; */
-  /* background-color: #c4c5c5; */
-  background-color: #efefef;
-  box-shadow: 2px 2px #8a8a8a;
-  margin: 0px 10px 10px 0px;
 }
 
 .badge-head {
@@ -365,6 +354,8 @@ a:hover {
 }
 
 .content-data-summary {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 1.5rem 0;
   margin-left: 2rem !important;
 }
 
@@ -390,10 +381,82 @@ a:hover {
   margin-right: 0 !important;
 }
 
+.content-desktop {
+  display: block;
+}
+.content-mobile {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* home page and right pane css --ends */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+  .content-desktop {
+    display: none;
+  }
+  .content-mobile {
+    display: block;
+  }
+
   .center {
-    margin-left: 1%;
-    width: 98%;
+    margin: 0.5% !important;
+    width: 99%;
+  }
+
+  .image-col-3 {
+    width: 100% !important;
+  }
+
+  .audio-image-container {
+    width: 6rem !important;
+  }
+
+  .audio-text-container {
+    width: 13rem !important;
+  }
+
+  .badge-data {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .badge-head {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .home-widget-data {
+    padding: 0.5rem;
+  }
+
+  .each-home-widget {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .ipsPad,
+  .ipsApp ul.ipsPad,
+  .ipsApp ol.ipsPad {
+    padding: 5px;
+  }
+
+  .pad {
+    padding: 1rem;
+  }
+
+  .inner {
+    margin-left: 4% !important;
+    margin-right: 4% !important;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .content-data {
+    font-size: 1rem;
   }
 }

@@ -1,22 +1,37 @@
 .content-detail {
-    position: relative;
-    margin-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .date-author-box-content {
-    font-size: 1.3rem;
-    color: darkgray;
+  font-size: 1.3rem;
+  color: darkgray;
 }
 
 .date-author-content {
-    padding: 1rem 1rem 0 1rem;
-    margin: 0;
-    font-size: 1.3rem;
-    color: darkgray;
-    /* width: 180px; */
-    text-align: left;
+  padding: 1rem 1rem 0 1rem;
+  margin: 0;
+  font-size: 1.3rem;
+  color: darkgray;
+  /* width: 180px; */
+  text-align: left;
 }
 
 hr {
-    background-color: cadetblue;
+  background-color: cadetblue;
+}
+
+@media only screen and (max-width: 768px) {
+  .content-detail {
+    margin: 1%;
+  }
+
+  .date-author-box-content,
+  .date-author-content {
+    font-size: 0.8rem;
+  }
+  
+  .date-author-content {
+      padding: 0 !important;
+  }
 }

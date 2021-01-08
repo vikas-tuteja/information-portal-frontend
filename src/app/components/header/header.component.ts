@@ -5,6 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { ToastrService } from 'ngx-toastr';
 import { MESSAGES } from 'src/app/constants/messages';
 import { SearchList } from 'src/app/models/content';
@@ -24,8 +25,11 @@ export class HeaderComponent implements OnInit {
   searchList!: SearchList;
   currentFocus = -1;
   inp!: HTMLInputElement;
+  isMobile!: any;
+  isDesktop!: any; 
 
   constructor(
+    private deviceService: DeviceDetectorService,
     private activatedRoute: ActivatedRoute,
     private sharedService: SharedService,
     private userService: UserService,
@@ -34,6 +38,10 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    this.isDesktop = this.deviceService.isDesktop();
+
     this.selectedPage = this.activatedRoute.snapshot.url[0]?.path || 'home';
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();

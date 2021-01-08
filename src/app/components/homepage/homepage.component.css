@@ -1,11 +1,21 @@
 .carousel .carousel-indicators li {
-    border-radius: 50%;
-    cursor: pointer;
-    height: .625rem;
-    width: .625rem;
-    background-color: cadetblue;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 0.625rem;
+  width: 0.625rem;
+  background-color: cadetblue;
 }
 
 .carousel-indicators .active {
-    background-color: #fff;
+  background-color: #fff;
+}
+
+.homepage-ht {
+  height: 2400px;
+}
+
+@media only screen and (max-width: 768px) {
+  .homepage-ht {
+    height: 2900px;
+  }
 }
