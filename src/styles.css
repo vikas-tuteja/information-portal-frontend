@@ -11,7 +11,7 @@ body {
 }
 
 iframe {
-  padding: 1rem;
+  max-width: 100%;
 }
 
 img {
@@ -257,7 +257,7 @@ a:hover {
   height: 100px;
   width: 100px;
   z-index: 100;
-  transform: rotate(5deg);
+  transform: rotate(6deg);
   margin-right: 1rem;
 }
 
@@ -394,9 +394,15 @@ a:hover {
 
 /* home page and right pane css --ends */
 @media only screen and (max-width: 768px) {
+  iframe {
+    height: auto;
+    width: auto;
+  }
+
   .content-desktop {
     display: none;
   }
+
   .content-mobile {
     display: block;
   }
@@ -459,4 +465,22 @@ a:hover {
   .content-data {
     font-size: 1rem;
   }
+
+  .stamp-detail {
+    position: absolute;
+    right: 0rem;
+    top: 2rem;
+  }
+
+  img {
+    padding: 0 0 1rem 0;
+    height: auto !important;
+  }
+
+  .content-data-summary {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1.5rem 0 !important;
+    /* margin-left: 2rem !important; */
+  }
+  
 }

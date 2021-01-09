@@ -246,6 +246,7 @@ a {
 
 .summary-ht {
   height: 30rem;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -267,5 +268,9 @@ a {
 
   .date-author-content {
     padding: 0 !important;
+  }
+
+  .summary-ht {
+    height: 20rem;
   }
 }

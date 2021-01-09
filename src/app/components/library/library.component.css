@@ -1,8 +1,18 @@
 .card-body-library {
-    padding: 0.8rem !important;
-    height: 375px;
+  padding: 0.8rem !important;
+  height: 375px;
 }
 
 .card-summary-ht {
-    height: 145px;
+  height: 145px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-body-library {
+    height: 335px;
+  }
+
+  .col-md-4 {
+    padding-right: 0 !important;
+  }
 }
