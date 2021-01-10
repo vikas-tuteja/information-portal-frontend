@@ -1,4 +1,5 @@
-const BACKEND_URL = 'http://localhost:8000/';
+// const BACKEND_URL = 'http://localhost:8000/';
+const BACKEND_URL = 'http://ec2-54-83-171-219.compute-1.amazonaws.com/';
 
 export class API {
 
