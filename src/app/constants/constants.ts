@@ -1,3 +1,3 @@
 export class CONSTANTS {
-    static readonly PAGE_SIZE = 8;
+    static readonly PAGE_SIZE = 12;
 }

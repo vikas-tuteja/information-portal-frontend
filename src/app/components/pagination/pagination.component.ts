@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {CONSTANTS} from 'src/app/constants/constants';
+import { CONSTANTS } from 'src/app/constants/constants';
 
 @Component({
   selector: 'app-pagination',
@@ -18,12 +18,14 @@ export class PaginationComponent implements OnInit {
   pageDetails!: any[];
   private regExp!: RegExp;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.regExp = new RegExp('page=[0-9]+$');
     this.totalPages = Math.ceil(this.totalCount / this.pageSize);
     this.pageDetails = this.preparePageDetails(this.totalPages);
+    this.setPreviousLink();
+    this.setNextLink();
   }
 
   preparePageDetails(n: number): any[] {
@@ -46,7 +48,6 @@ export class PaginationComponent implements OnInit {
 
   prepareLinks(pageNumber: number = 1): string {
     // set page number in qp for every page link
-    // TODO: next and previous links are not working
     if (!this.router.url.includes('page=')) {
       if (this.router.url.includes('?')) {
         return `${this.router.url}&page=${pageNumber}`;
@@ -55,5 +56,19 @@ export class PaginationComponent implements OnInit {
       }
     }
     return this.router.url.replace(this.regExp, `page=${pageNumber}`);
+  }
+
+  setPreviousLink() {
+    this.previous == '';
+    if (this.currentPage !== 1) {
+      this.previous = this.prepareLinks(this.currentPage - 1);
+    }
+  }
+
+  setNextLink() {
+    this.next == '';
+    if (this.totalPages !== this.currentPage) {
+      this.next = this.prepareLinks(this.currentPage + 1);
+    }
   }
 }

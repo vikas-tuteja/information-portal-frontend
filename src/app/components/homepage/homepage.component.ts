@@ -1,51 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { Audio, ContentDetail } from 'src/app/models/content';
+import { ContentsService } from 'src/app/services/contents.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  constructor() { }
-  images = ["", "/assets/images/sikh-farmer.jpeg", "/assets/images/farmer2.jpeg", "https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"];
-  cards = [
-    {
-      title: 'Card Title 1',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[0]    },
-    {
-      title: 'Card Title 2',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[1]
-    },
-    {
-      title: 'Card Title 3',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[2]
-    },
-    {
-      title: 'Card Title 4',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[3]
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[1]
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Read More',
-      img: this.images[2]
-    }
-  ];
-  slides: any = [[]];
+  articles!: any[];
+  blogs!: any[];
+  news!: any[];
+  newsDesktop! : ContentDetail[];
+  audioLibrary!: Audio[];
+  no_of_cards = 3;
+  isLoggedIn!: boolean;
+
+  constructor(
+    private deviceService: DeviceDetectorService,
+    private contentService: ContentsService,
+    private sharedService: SharedService
+  ) {}
+
   chunk(arr: any, chunkSize: number) {
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
@@ -54,7 +32,38 @@ export class HomepageComponent implements OnInit {
     return R;
   }
   ngOnInit(): void {
-    this.slides = this.chunk(this.cards, 3);
-  }
+    const isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    const isDesktopDevice = this.deviceService.isDesktop();
 
+    if(isMobile) {
+      this.no_of_cards = 1
+    }
+
+    // get articles
+    this.contentService
+      .getCategoryWiseContent(1, 'articles')
+      .subscribe((data) => {
+        this.articles = this.chunk(data.results, this.no_of_cards);
+      });
+
+    // get blogs
+    this.contentService.getCategoryWiseContent(1, 'blogs').subscribe((data) => {
+      this.blogs = this.chunk(data.results, this.no_of_cards);
+    });
+
+    // get news
+    this.contentService.getCategoryWiseContent(1, 'news').subscribe((data) => {
+      this.news = this.chunk(data.results, this.no_of_cards);
+      this.newsDesktop = data.results;
+    });
+
+    // get audio librarys
+    this.contentService.getCategoryWiseLibrary().subscribe((data) => {
+      this.audioLibrary = data.results;
+    });
+
+    // cheked if login
+    this.isLoggedIn = this.sharedService.isLoggedIn();
+  }
 }

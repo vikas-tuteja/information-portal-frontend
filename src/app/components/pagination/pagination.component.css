@@ -1,15 +1,14 @@
 .pagination {
-    text-align: center;
-    margin-left: 37%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  text-align: center;
+  margin: 2rem auto;
+  width: 20%;
+  display: flex;
 }
 
 @media only screen and (max-width: 600px) {
-    .pagination {
-        text-align: center;
-        margin-left: 15%;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+  .pagination {
+    margin: 0.4rem auto;
+    width: 20%;
+    display: inline-flex;
+  }
 }

@@ -13,7 +13,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { OurmissionComponent } from './components/ourmission/ourmission.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
-import { LatestnewsComponent } from './components/latestnews/latestnews.component';
 import { LibraryComponent } from './components/library/library.component';
 import { ContentComponent } from './components/content/content.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -21,6 +20,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContentDetailComponent } from './components/contentdetail/contentdetail.component';
+import { ToastrModule } from 'ngx-toastr';
+import { LibraryDetailComponent } from './components/librarydetail/librarydetail.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { HttpClientModule } from '@angular/common/http';
     ContactusComponent,
     OurmissionComponent,
     FaqsComponent,
-    LatestnewsComponent,
+    ContentComponent,
     LibraryComponent,
     ContentComponent,
     SigninComponent,
     SignupComponent,
     PaginationComponent,
-    RightPanelComponent
+    RightPanelComponent,
+    ContentDetailComponent,
+    LibraryDetailComponent,
   ],
   imports: [
     MatIconModule,
@@ -46,7 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
