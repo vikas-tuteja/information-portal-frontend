@@ -139,13 +139,13 @@ li.nav-item.active {
   }
 }
 
-@media only screen and (max-width: 395px) {
+@media only screen and (max-width: 420px) {
   .each-nav {
     font-size: 0.8rem;
   }
 }
 
-@media only screen and (max-width: 325px) {
+@media only screen and (max-width: 400px) {
   .each-nav {
     font-size: 0.7rem;
   }
