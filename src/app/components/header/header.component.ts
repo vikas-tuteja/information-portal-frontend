@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   currentFocus = -1;
   inp!: HTMLInputElement;
   isMobile!: any;
-  isDesktop!: any; 
+  isDesktop!: any;
 
   constructor(
     private deviceService: DeviceDetectorService,
@@ -39,10 +39,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
+    // const isTablet = this.deviceService.isTablet();
     this.isDesktop = this.deviceService.isDesktop();
 
     this.selectedPage = this.activatedRoute.snapshot.url[0]?.path || 'home';
+
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
   }
@@ -56,6 +57,8 @@ export class HeaderComponent implements OnInit {
         res.style.visibility = 'hidden';
         inp.value = '';
       }
+      inp.classList.remove('full-search');
+      inp.classList.add('search');
     }
   }
   // sign out
@@ -154,5 +157,31 @@ export class HeaderComponent implements OnInit {
         a.appendChild(b);
       }
     });
+  }
+
+  // add full search class on mobile
+  cssSetUp() {
+    const inp = document.getElementById('search') as HTMLInputElement;
+    if (this.isMobile || true) {
+      inp.classList.remove('search');
+      inp.classList.add('full-search');
+    }
+  }
+
+  // close autosuggest div if open
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchmove', ['$event'])
+  closeAutosuggest(elem: any) {
+    const inp = document.getElementById('search') as HTMLInputElement;
+    const autosugg = document.getElementById(
+      'searchautocomplete-list'
+    ) as HTMLDivElement;
+
+    if (elem.target.id !== 'search' && autosugg) {
+      inp.value = '';
+      inp.classList.remove('full-search');
+      inp.classList.add('search');
+      autosugg.style.visibility = 'hidden';
+    }
   }
 }
