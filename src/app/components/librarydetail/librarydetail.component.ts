@@ -33,12 +33,6 @@ export class LibraryDetailComponent implements OnInit {
     this.contentService.getLibraryDetail(slug).subscribe(data => {
       this.content = data;
       console.log(data);
-      // this.filetype = data.filetype;
-      // this.title = data.title;
-      // this.author = data.author;
-      // this.createdAt = data.created_at;
-      // this.views = data.views;
-      // this.filesize = data.size;
     });
   }
 }

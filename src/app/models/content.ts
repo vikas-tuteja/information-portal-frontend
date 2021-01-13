@@ -36,6 +36,7 @@ export interface Audio {
   filetype: string;
   album_name: string;
   singer_name: string;
+  duration: string;
 }
 
 export interface AudioLibrary {

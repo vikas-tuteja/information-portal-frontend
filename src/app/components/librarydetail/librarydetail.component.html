@@ -14,7 +14,7 @@
         {{ content.created_at | date: "MMM dd yyyy, HH:mm" }}
       </i>
       <hr />
-      <div class="col-md-6" style="width: 92% !important;">
+      <div class="col-md-6" style="width: 92% !important">
         <div class="player__container float-left">
           <div class="player__body">
             <div class="body__cover">
@@ -31,6 +31,7 @@
               </ul>
 
               <img
+                *ngIf="content"
                 class="img-no-padding"
                 src="{{ content.summary_image }}"
                 onerror="this.src='/assets/images/default_audio_player.jpg'"
@@ -80,10 +81,9 @@
           </div>
 
           <div class="player__footer">
-            <span
-              ><b>Size</b>: &nbsp;&nbsp;{{ content.size }}&nbsp;&nbsp;Mb</span
-            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span><b>Type</b>: &nbsp;&nbsp;{{ content.filetype }}</span>
+            <span><b>Size</b>: {{ content.size }}&nbsp;Mb&nbsp;&nbsp;&nbsp;</span>
+            <span><b>Type</b>: &nbsp;{{ content.filetype }}&nbsp;&nbsp;&nbsp;</span>
+            <span><b>Length</b>: &nbsp;{{ content.duration }}</span>
           </div>
         </div>
       </div>

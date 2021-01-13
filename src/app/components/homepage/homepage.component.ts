@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Audio, ContentDetail } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
@@ -8,12 +8,13 @@ import { SharedService } from 'src/app/services/shared.service';
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent implements OnInit {
   articles!: any[];
   blogs!: any[];
   news!: any[];
-  newsDesktop! : ContentDetail[];
+  newsDesktop!: ContentDetail[];
   audioLibrary!: Audio[];
   no_of_cards = 3;
   isLoggedIn!: boolean;
@@ -36,8 +37,8 @@ export class HomepageComponent implements OnInit {
     const isTablet = this.deviceService.isTablet();
     const isDesktopDevice = this.deviceService.isDesktop();
 
-    if(isMobile) {
-      this.no_of_cards = 1
+    if (isMobile) {
+      this.no_of_cards = 1;
     }
 
     // get articles
@@ -61,9 +62,23 @@ export class HomepageComponent implements OnInit {
     // get audio librarys
     this.contentService.getCategoryWiseLibrary().subscribe((data) => {
       this.audioLibrary = data.results;
+
+      // correct left and right arrow css at last
+      this.correctArrowCss('left');
+      this.correctArrowCss('right');
     });
 
     // cheked if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
+  }
+
+  correctArrowCss(side: any) {
+    setTimeout(() => {
+      const elems = document.getElementsByClassName('fa-chevron-' + side);
+      for (let i = 0; i < elems.length; i++) {
+        elems[i].classList.remove('fas');
+        elems[i].classList.add('fa', 'blue', 'chev', 'chev-' + side);
+      }
+    }, 1000);
   }
 }

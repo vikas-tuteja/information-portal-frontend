@@ -14,6 +14,20 @@
   height: 2400px;
 }
 
+.chev {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+}
+
+.chev-left {
+  left: -1.2rem;
+}
+
+.chev-right {
+  right: -1.2rem;
+}
+
 @media only screen and (max-width: 768px) {
   .homepage-ht {
     height: 2900px;
