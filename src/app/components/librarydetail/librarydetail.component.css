@@ -233,6 +233,8 @@ a {
 .player__footer {
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
+  margin: 0 auto !important;
+  width: 85%;
 }
 
 .list--footer a {
@@ -272,5 +274,11 @@ a {
 
   .summary-ht {
     height: 20rem;
+  }
+
+  .player__footer {
+    width: 90%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

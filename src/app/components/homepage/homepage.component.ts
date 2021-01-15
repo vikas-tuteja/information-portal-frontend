@@ -32,6 +32,7 @@ export class HomepageComponent implements OnInit {
     }
     return R;
   }
+  
   ngOnInit(): void {
     const isMobile = this.deviceService.isMobile();
     const isTablet = this.deviceService.isTablet();

@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
 import { ContentsService } from 'src/app/services/contents.service';
 
 @Component({
   selector: 'app-latestnewsdetail',
   templateUrl: './contentdetail.component.html',
-  styleUrls: ['./contentdetail.component.css']
+  styleUrls: ['./contentdetail.component.css'],
 })
 export class ContentDetailComponent implements OnInit {
   slug!: string;
+  preview: boolean = false;
   contentDetail!: SafeHtml;
   title!: string;
   createdAt!: Date;
@@ -22,19 +24,28 @@ export class ContentDetailComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private contentService: ContentsService,
-    private domSanitizer: DomSanitizer) { }
+    private domSanitizer: DomSanitizer
+  ) {}
 
   ngOnInit(): void {
     this.url = this.router.url;
-    this.route.paramMap.subscribe(params => {
-      this.slug = params.get('slug') || '';
-      this.getContentDetail(this.slug);
-    })
+    combineLatest([this.route.paramMap, this.route.queryParamMap]).subscribe(
+      (combined) => {
+        const params = combined[0];
+        const qparams = combined[1];
+
+        this.slug = params.get('slug') || '';
+        this.preview = Boolean(qparams.get('preview')) || this.preview;
+        this.getContentDetail(this.slug, this.preview);
+      }
+    );
   }
 
-  getContentDetail(slug: string) {
-    this.contentService.getContenDetail(slug).subscribe(data => {
-      this.contentDetail = this.domSanitizer.bypassSecurityTrustHtml(data.content);
+  getContentDetail(slug: string, preview: boolean) {
+    this.contentService.getContenDetail(slug, preview).subscribe((data) => {
+      this.contentDetail = this.domSanitizer.bypassSecurityTrustHtml(
+        data.content
+      );
       this.title = data.title;
       this.author = data.author;
       this.createdAt = data.created_at;
