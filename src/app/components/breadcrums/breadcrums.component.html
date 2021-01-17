@@ -1,0 +1,14 @@
+<ul class="breadcrums">
+  <li>
+    <a href="/">{{ firstBc }}</a>
+  </li>
+  <li *ngFor="let eachBreadcrum of bcList">
+    <div *ngIf="!eachBreadcrum.url; then plainText; else linkText"></div>
+    <ng-template #plainText>{{ eachBreadcrum.name }}</ng-template>
+    <ng-template #linkText
+      ><a href="{{ eachBreadcrum.url }}">{{
+        eachBreadcrum.name
+      }}</a></ng-template
+    >
+  </li>
+</ul>

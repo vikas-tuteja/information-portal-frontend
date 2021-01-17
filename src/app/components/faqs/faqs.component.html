@@ -2,18 +2,19 @@
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8 faqs-body">
+    <app-breadcrums></app-breadcrums>
     <div class="heading"><h1>FAQs Section</h1></div>
     <ul>
-      <li *ngFor="let faq of faqs;">
+      <li *ngFor="let faq of faqs">
         <input type="checkbox" checked />
         <i></i>
-        <h2>{{faq.question}}</h2>
+        <h2>{{ faq.question }}</h2>
         <p>
-          {{faq.answer}}
+          {{ faq.answer }}
         </p>
       </li>
     </ul>
-    <br>
+    <br />
   </div>
 </div>
 <app-footer></app-footer>

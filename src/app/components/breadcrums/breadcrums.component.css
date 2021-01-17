@@ -1,0 +1,44 @@
+ul {
+  padding-bottom: 1rem;
+}
+
+.breadcrums > li {
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.breadcrums > li > a {
+  color: cadetblue;
+}
+
+.breadcrums > li:first-child::before {
+  content: "";
+  display: inline-bloc/k;
+  font-family: "fontAwesome";
+  padding: 0 1rem 1rem 0;
+  font-size: 1.1rem;
+}
+
+.breadcrums > li::before {
+  content: "\f054";
+  display: inline-block;
+  font-family: "fontAwesome";
+  padding: 0 1rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .breadcrums > li {
+    font-size: 0.9rem;
+  }
+
+  .breadcrums > li:first-child::before {
+    padding: 0 0.5rem 0.5rem 0;
+    font-size: 0.8rem;
+  }
+
+  .breadcrums > li::before {
+    padding: 0 0.5rem 0 0.5rem;
+    font-size: 0.8rem;
+  }
+}

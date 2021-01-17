@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContentDetailComponent } from './components/contentdetail/contentdetail.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LibraryDetailComponent } from './components/librarydetail/librarydetail.component';
+import { BreadcrumsComponent } from './components/breadcrums/breadcrums.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LibraryDetailComponent } from './components/librarydetail/librarydetail
     RightPanelComponent,
     ContentDetailComponent,
     LibraryDetailComponent,
+    BreadcrumsComponent,
   ],
   imports: [
     MatIconModule,
