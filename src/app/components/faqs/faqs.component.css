@@ -4,9 +4,7 @@
   min-height: 50rem;
 }
 
-.faqs-body>
-
-.transition,
+.faqs-body > .transition,
 ul li i:before,
 ul li i:after,
 p {
@@ -133,5 +131,15 @@ ul li input[type="checkbox"]:checked ~ i:after {
   100% {
     transform-origin: top center;
     transform: rotateX(0deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
