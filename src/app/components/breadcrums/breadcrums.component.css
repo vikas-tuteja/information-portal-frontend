@@ -28,7 +28,11 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
-    .breadcrums > li {
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  .breadcrums > li {
     font-size: 0.9rem;
   }
 

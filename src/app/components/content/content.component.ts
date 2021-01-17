@@ -16,6 +16,7 @@ export class ContentComponent implements OnInit {
   page!: number;
   contents!: ContentDetail[];
   category!: string;
+  urlPath!: string
 
   constructor(
     private route: ActivatedRoute,
@@ -33,10 +34,13 @@ export class ContentComponent implements OnInit {
       const url = this.router.url;
       if (url == '/top-articles') {
         this.category = 'articles'
+        this.urlPath = 'articles'
       } else if (url == '/popular-blogs') {
         this.category = 'blogs'
+        this.urlPath = 'blogs'
       } else {
         this.category = 'news'
+        this.urlPath = 'latest-news'
       }
       this.getContents(this.page, this.category);
     });
