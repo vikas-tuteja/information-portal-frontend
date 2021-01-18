@@ -48,8 +48,9 @@ export class HeaderComponent implements OnInit {
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
 
+    const that = this;
     $(document).ready(function () {
-      // menu click event
+      // mobile menu click event
       $('.menuBtn').click(function (this: any) {
         $(this).toggleClass('act');
         if ($(this).hasClass('act')) {
@@ -57,6 +58,50 @@ export class HeaderComponent implements OnInit {
         } else {
           $('.mainMenu').removeClass('act');
         }
+      });
+
+      // cookie and pageoverlay div hide / display
+      const cookieContent = $('.cookie-disclaimer');
+      const pageOverlay = $('#page_overlay');
+      const cookieName = 'information-portal-cookie';
+      var cookie = checkCookie();
+      const validity = 7;
+
+      if (cookie === true) {
+        cookieContent.hide();
+        pageOverlay.hide();
+      }
+
+      function setCookie(cname: any, cvalue: any, exdays: any) {
+        var d = new Date();
+        // 30 days
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * validity);
+        var expires = 'expires=' + d.toUTCString();
+        document.cookie = cname + '=' + cvalue + '; ' + expires;
+      }
+
+      function getCookie(cname: any) {
+        var name = cname + '=';
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i].trim();
+          if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return '';
+      }
+
+      function checkCookie() {
+        var check = getCookie(cookieName);
+        return check === 'accepted' ? true : false;
+      }
+
+      $('.accept-cookie').click(function () {
+        setCookie(cookieName, 'accepted', validity);
+        cookieContent.hide(500);
+        pageOverlay.hide(500);
+        that.toastr.info(MESSAGES.ACCEPT_CONSENT);
       });
     });
   }

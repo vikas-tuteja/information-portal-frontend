@@ -11,6 +11,23 @@
   <!-- STYLE CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
+
+<div id="page_overlay" class="page-overlay"></div>
+<!-- /.container -->
+<div class="cookie-disclaimer">
+  <!-- <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div> -->
+  <div class="container">
+    <p>
+      This site makes the use of cookies to enhance the user experince and to take
+      the consent of the acceptance of Terms & Conditions.<br />
+      By clicking on the accept button, you accept
+      <a class="blue" href="/termsandconditions">The Terms & Conditions</a> of
+      this website.
+    </p>
+    <button type="button" class="red-button btn accept-cookie">Accept</button>
+  </div>
+</div>
+
 <!--Navbar-->
 <div class="blue-bg">
   <!-- Mobile only header -->
@@ -34,7 +51,7 @@
             (click)="cssSetUp()"
           />
         </form>
-        <a href="#" class="menuBtn">
+        <a class="menuBtn">
           <span class="lines"></span>
         </a>
         <nav class="mainMenu">
@@ -71,7 +88,7 @@
               <a href="/signup" class="suBtn">Register</a>
             </li>
             <li *ngIf="isLoggedIn">
-              <hr>
+              <hr />
               <a (click)="SignOut()">SignOut</a>
             </li>
           </ul>
