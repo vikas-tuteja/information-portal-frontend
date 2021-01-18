@@ -12,6 +12,7 @@ import { SearchList } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { UserService } from 'src/app/services/user.service';
+declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -46,6 +47,18 @@ export class HeaderComponent implements OnInit {
 
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
+
+    $(document).ready(function () {
+      // menu click event
+      $('.menuBtn').click(function (this: any) {
+        $(this).toggleClass('act');
+        if ($(this).hasClass('act')) {
+          $('.mainMenu').addClass('act');
+        } else {
+          $('.mainMenu').removeClass('act');
+        }
+      });
+    });
   }
 
   @HostListener('document:keyup', ['$event'])
@@ -104,7 +117,6 @@ export class HeaderComponent implements OnInit {
   getSearchList() {
     this.inp = document.getElementById('search') as HTMLInputElement;
     const search_string = this.inp.value;
-
     // get search result list from BE
     this.contentService.getSearchList(search_string).subscribe((searchList) => {
       this.searchList = searchList;

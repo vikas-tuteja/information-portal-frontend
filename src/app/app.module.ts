@@ -55,10 +55,10 @@ import { BreadcrumsComponent } from './components/breadcrums/breadcrums.componen
     HttpClientModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-      preventDuplicates: true
-    })
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

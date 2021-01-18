@@ -19,6 +19,9 @@ export class HomepageComponent implements OnInit {
   no_of_cards = 3;
   isLoggedIn!: boolean;
 
+  isTablet: boolean = false;
+  isDeskTop: boolean = false;
+
   constructor(
     private deviceService: DeviceDetectorService,
     private contentService: ContentsService,
@@ -32,14 +35,17 @@ export class HomepageComponent implements OnInit {
     }
     return R;
   }
-  
+
   ngOnInit(): void {
     const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    const isDesktopDevice = this.deviceService.isDesktop();
+    this.isTablet = this.deviceService.isTablet();
+
+    this.isDeskTop = this.deviceService.isDesktop();
 
     if (isMobile) {
       this.no_of_cards = 1;
+    } else if (this.isTablet) {
+      this.no_of_cards = 2;
     }
 
     // get articles
@@ -81,5 +87,15 @@ export class HomepageComponent implements OnInit {
         elems[i].classList.add('fa', 'blue', 'chev', 'chev-' + side);
       }
     }, 1000);
+  }
+
+  calculateClasses() {
+    if (this.isTablet) {
+      return 'col-md-6';
+    } else if (this.isDeskTop) {
+      return 'col-md-4';
+    } else {
+      return 'col-md-4';
+    }
   }
 }

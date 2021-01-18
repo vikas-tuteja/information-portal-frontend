@@ -421,7 +421,7 @@ a:hover {
   }
 
   .audio-text-container {
-    width: 13rem !important;
+    width: 27rem !important;
   }
 
   .badge-data {
@@ -483,5 +483,41 @@ a:hover {
     margin: 1.5rem 0 1.5rem 0 !important;
     /* margin-left: 2rem !important; */
   }
-  
+}
+
+@media only screen and (max-width: 572px) {
+  .audio-text-container {
+    width: 23rem !important;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .audio-text-container {
+    width: 19rem !important;
+  }
+}
+
+@media only screen and (max-width: 444px) {
+  .audio-text-container {
+    width: 16rem !important;
+  }
+}
+
+@media only screen and (max-width: 395px) {
+  .audio-text-container {
+    width: 14rem !important;
+  }
+}
+
+@media only screen and (max-width: 362px) {
+  .audio-text-container {
+    width: 13rem !important;
+  }
+}
+
+
+@media only screen and (max-width: 325px) {
+  .audio-text-container {
+    width: 11rem !important;
+  }
 }

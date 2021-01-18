@@ -35,7 +35,19 @@ export class BreadcrumsComponent implements OnInit {
             url: !currentPage ? '/top-articles' : false,
           });
           break;
+        case 'articles':
+          this.bcList.push({
+            name: 'Top Articles',
+            url: !currentPage ? '/top-articles' : false,
+          });
+          break;
         case 'popular-blogs':
+          this.bcList.push({
+            name: 'Popular Blogs',
+            url: !currentPage ? '/poular-blogs' : false,
+          });
+          break;
+        case 'blogs':
           this.bcList.push({
             name: 'Popular Blogs',
             url: !currentPage ? '/poular-blogs' : false,

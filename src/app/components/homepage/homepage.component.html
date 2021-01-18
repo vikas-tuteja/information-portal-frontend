@@ -5,10 +5,8 @@
     <div class="ipsWidget ipsWidget_vertical ipsBox">
       <h3 class="ipsType_reset ipsWidget_title badge-head">Top Articles</h3>
     </div>
-    <span
-      class="float-right badge-data blue pointer"
-      style="padding-right: 12px"
-      >View All</span
+    <span class="float-right badge-data blue pointer display-over"
+      ><a href="/top-articles">View All</a></span
     >
     <mdb-carousel
       [isControls]="true"
@@ -20,7 +18,8 @@
             <span class="sr-only">Previous</span> -->
       <mdb-carousel-item *ngFor="let item of articles; let i = index">
         <div
-          class="min-height col-md-4"
+          [ngClass]="calculateClasses()"
+          class="min-height"
           *ngFor="let card of item; let cardIndex = index"
         >
           <mdb-card class="my-1">
@@ -59,10 +58,8 @@
     <div class="ipsWidget ipsWidget_vertical ipsBox">
       <h3 class="ipsType_reset ipsWidget_title badge-head">Popular Blogs</h3>
     </div>
-    <span
-      class="float-right badge-data blue pointer"
-      style="padding-right: 12px"
-      >View All</span
+    <span class="float-right badge-data blue pointer display-over"
+      ><a href="/popular-blogs">View All</a></span
     >
     <mdb-carousel
       [isControls]="true"
@@ -145,10 +142,8 @@
               </span>
             </div>
           </div>
-          <span
-            class="float-right badge-data blue pointer"
-            style="padding-right: 12px"
-            ><a class="blue" href="/latest-news">View All</a></span
+          <span class="float-right badge-data blue pointer display-over"
+            ><a href="/latest-news">View All</a></span
           >
         </div>
       </div>
@@ -159,10 +154,8 @@
       <div class="ipsWidget ipsWidget_vertical ipsBox">
         <h3 class="ipsType_reset ipsWidget_title badge-head">Latest News</h3>
       </div>
-      <span
-        class="float-right badge-data blue pointer"
-        style="padding-right: 12px"
-        >View All</span
+      <span class="float-right badge-data blue pointer display-over"
+        ><a href="/latest-news">View All</a></span
       >
       <mdb-carousel
         [isControls]="true"
@@ -256,9 +249,8 @@
             </div>
           </div>
           <span
-            class="float-right badge-data blue pointer"
-            style="padding-right: 12px"
-            ><a class="blue" href="/audio-books">View All</a></span
+            class="float-right badge-data blue pointer display-over"
+            ><a href="/audio-books">View All</a></span
           >
         </div>
       </div>

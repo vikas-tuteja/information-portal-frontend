@@ -13,46 +13,91 @@
 </head>
 <!--Navbar-->
 <div class="blue-bg">
-  <mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
+  <!-- Mobile only header -->
+  <div class="" *ngIf="!isDesktop">
+    <div class="mainContainer">
+      <header>
+        <a class="each-nav white" mdbWavesEffect href="/"
+          ><span class="pointer">Logo</span></a
+        >
+        <form class="form-inline md-form form-sm active-pink-2">
+          <input
+            class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
+            type="text"
+            placeholder="Search"
+            id="search"
+            name="search"
+            aria-label="Search"
+            autocomplete="off"
+            mdbInput
+            (keyup)="getSearchList()"
+            (click)="cssSetUp()"
+          />
+        </form>
+        <a href="#" class="menuBtn">
+          <span class="lines"></span>
+        </a>
+        <nav class="mainMenu">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/latest-news">Latest News</a>
+            </li>
+            <li>
+              <a href="/audio-books">Audio Books</a>
+            </li>
+            <li>
+              <a href="/top-articles">Top Articles</a>
+            </li>
+            <li>
+              <a href="/popular-blogs">Popular Blogs</a>
+            </li>
+            <li>
+              <a href="/our-mission">Our Mission</a>
+            </li>
+            <li>
+              <a href="/contact-us">ContactUs</a>
+            </li>
+            <li>
+              <a href="/about-us">About Us</a>
+            </li>
+            <li>
+              <a href="/faqs">FAQs</a>
+            </li>
+            <li *ngIf="!isLoggedIn">
+              <a href="/signin" class="suBtn">SignIn</a>&nbsp;&nbsp;
+              <a href="/signup" class="suBtn">Register</a>
+            </li>
+            <li *ngIf="isLoggedIn">
+              <hr>
+              <a (click)="SignOut()">SignOut</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container"></div>
+      <footer></footer>
+    </div>
+  </div>
+
+  <mdb-navbar
+    SideClass="navbar navbar-expand-lg"
+    [containerInside]="false"
+    *ngIf="isDesktop"
+  >
     <!-- Navbar brand -->
     <div class="" class="header-left-panel"></div>
     <div class="" class="header-center-panel">
-      <!-- Mobile only Links -->
-      <ul class="navbar-nav full-width input-icons" *ngIf="isMobile">
-        <li class="nav-item">
-          <a class="each-nav white" mdbWavesEffect href="/"
-            ><span class="pointer">Logo</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <form class="form-inline md-form form-sm active-pink-2">
-            <input
-              class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
-              type="text"
-              placeholder="Search"
-              id="search"
-              name="search"
-              aria-label="Search"
-              autocomplete="off"
-              mdbInput
-              (keyup)="getSearchList()"
-              (click)="cssSetUp()"
-            />
-          </form>
-        </li>
-      </ul>
-
       <ul class="navbar-nav full-width input-icons">
-        <li class="nav-item" *ngIf="isDesktop">
+        <li class="nav-item">
           <a class="each-nav white" mdbWavesEffect href="/"
             ><span class="pointer">Logo</span></a
           >
         </li>
         <!-- Search form -->
-        <form
-          class="form-inline md-form form-sm active-pink-2"
-          *ngIf="isDesktop"
-        >
+        <form class="form-inline md-form form-sm active-pink-2">
           <input
             class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
             type="text"
@@ -67,8 +112,7 @@
         </form>
         <li class="nav-item" [ngClass]="{ active: selectedPage === 'home' }">
           <a class="each-nav white" mdbWavesEffect href="/"
-            ><span class="pointer">Home</span
-            ><span class="sr-only">(current)</span></a
+            ><span class="pointer">Home</span></a
           >
         </li>
         <li

@@ -80,6 +80,129 @@ li.nav-item.active {
 }
 
 @media only screen and (max-width: 768px) {
+  ol,
+  ul {
+    list-style: none;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  header {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    height: 50px;
+  }
+  /* menu button */
+  .menuBtn {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 101;
+  }
+  .menuBtn > span {
+    background-color: #fff;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -1px 0 0 -15px;
+    transition: height 100ms;
+  }
+  .menuBtn > span:after,
+  .menuBtn > span:before {
+    content: "";
+    background-color: #fff;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    transition: all 200ms;
+  }
+  .menuBtn > span:after {
+    top: -7px;
+  }
+  .menuBtn > span:before {
+    bottom: -7px;
+  }
+  .menuBtn.act > span {
+    height: 0;
+  }
+  .menuBtn.act > span:after,
+  .menuBtn.act > span:before {
+    background-color: cadetblue;
+    top: 1px;
+  }
+  .menuBtn.act > span:after {
+    transform: rotate(45deg);
+  }
+  .menuBtn.act > span:before {
+    transform: rotate(-45deg);
+  }
+  /* main menu block */
+  .mainMenu {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    display: table;
+    text-align: center;
+    opacity: 0;
+    transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(0);
+  }
+  .mainMenu.act {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .mainMenu.act ul li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .mainMenu ul {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .mainMenu li {
+    padding: 8px 0;
+    transition: all 400ms 510ms;
+    opacity: 0;
+  }
+  .mainMenu li:nth-child(odd) {
+    transform: translateX(30%);
+  }
+  .mainMenu li:nth-child(even) {
+    transform: translateX(-30%);
+  }
+  .mainMenu li:last-child {
+    transform: none;
+  }
+  .mainMenu a {
+    color: cadetblue;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+  .mainMenu a.suBtn {
+    color: #fff;
+  }
+  /* sign up button */
+  .suBtn {
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+
   .full-search {
     width: 100% !important;
     left: 0;
@@ -98,47 +221,16 @@ li.nav-item.active {
   }
 
   .search {
-    width: 20rem !important;
-  }
-
-  .navbar {
-    padding: 0.5rem;
-  }
-
-  .nav-item {
-    padding: 0 0.2rem;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    float: left;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .each-nav {
-    font-size: 0.9rem;
-  }
-
-  form {
-    margin: 0% !important;
-    padding: 0% !important;
-  }
-
-  .dropdown-menu {
-    left: -9rem !important;
+    width: 19rem !important;
+    top: -1.6rem;
+    left: 2.5rem;
   }
 
   /* autocomple items */
 
   .autocomplete-items {
     z-index: 99;
-    top: 100%;
+    top: 4rem;
     width: 100%;
     left: 0;
   }
@@ -156,6 +248,7 @@ li.nav-item.active {
 
   .search {
     width: 17rem !important;
+    top: -0.9rem;
   }
 }
 
@@ -165,7 +258,7 @@ li.nav-item.active {
   }
 
   .search {
-    width: 16rem !important;
+    width: 15rem !important;
   }
 }
 

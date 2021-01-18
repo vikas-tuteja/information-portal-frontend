@@ -17,7 +17,7 @@
 .chev {
   position: absolute;
   top: 50%;
-  z-index: 100;
+  z-index: 10;
 }
 
 .chev-left {
@@ -26,6 +26,15 @@
 
 .chev-right {
   right: -1.2rem;
+}
+
+.display-over {
+  z-index: 10 !important;
+  position: relative;
+}
+
+.display-over > a {
+  color: cadetblue;
 }
 
 @media only screen and (max-width: 768px) {
