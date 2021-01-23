@@ -17,7 +17,7 @@
   bottom: 0;
   left: 0;
   z-index: 103;
-  height: 15rem;
+  height: 20rem;
   position: fixed;
   opacity: 0.9;
 }
@@ -121,9 +121,11 @@ li.nav-item.active {
 
 @media only screen and (max-width: 768px) {
   .cookie-disclaimer {
-    height: 20rem;
+    height: 26rem;
   }
-
+  p {
+    font-size: 1.1rem;
+  }
   ol,
   ul {
     list-style: none;

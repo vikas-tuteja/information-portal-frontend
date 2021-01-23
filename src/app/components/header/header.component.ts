@@ -65,7 +65,7 @@ export class HeaderComponent implements OnInit {
       const pageOverlay = $('#page_overlay');
       const cookieName = 'information-portal-cookie';
       var cookie = checkCookie();
-      const validity = 7;
+      const validity = 30;
 
       if (cookie === true) {
         cookieContent.hide();
@@ -239,6 +239,19 @@ export class HeaderComponent implements OnInit {
       inp.classList.remove('full-search');
       inp.classList.add('search');
       autosugg.style.visibility = 'hidden';
+    }
+  }
+
+  // tncClicked enable/disable Procced button
+  tncClicked() {
+    const elem = document.getElementById('tnccheckbox') as HTMLInputElement;
+    const proceed = document.getElementById(
+      'accept-cookie'
+    ) as HTMLButtonElement;
+    if (elem?.checked == true) {
+      proceed.disabled=false;
+    } else {
+      proceed.disabled=true;
     }
   }
 }
