@@ -10,8 +10,10 @@
   background-color: #efefef;
   box-shadow: 2px 2px #8a8a8a;
   margin: 0.4rem;
-  /* background-color: #cfefff; */
-  /* background-color: #c4c5c5; */
+}
+
+.desktop-badge:active {
+  transform: translateY(4px);
 }
 
 @media only screen and (max-width: 768px) {

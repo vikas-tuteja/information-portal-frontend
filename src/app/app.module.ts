@@ -19,11 +19,14 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContentDetailComponent } from './components/contentdetail/contentdetail.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LibraryDetailComponent } from './components/librarydetail/librarydetail.component';
 import { BreadcrumsComponent } from './components/breadcrums/breadcrums.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { BreadcrumsComponent } from './components/breadcrums/breadcrums.componen
     ContentDetailComponent,
     LibraryDetailComponent,
     BreadcrumsComponent,
+    LoaderComponent,
   ],
   imports: [
     MatIconModule,
@@ -58,7 +62,14 @@ import { BreadcrumsComponent } from './components/breadcrums/breadcrums.componen
       preventDuplicates: true,
     }),
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -82,8 +82,12 @@
           </div>
 
           <div class="player__footer">
-            <span><b>Size</b>: {{ content.size }}&nbsp;Mb&nbsp;&nbsp;&nbsp;</span>
-            <span><b>Type</b>: &nbsp;{{ content.filetype }}&nbsp;&nbsp;&nbsp;</span>
+            <span
+              ><b>Size</b>: {{ content.size }}&nbsp;Mb&nbsp;&nbsp;&nbsp;</span
+            >
+            <span
+              ><b>Type</b>: &nbsp;{{ content.filetype }}&nbsp;&nbsp;&nbsp;</span
+            >
             <span><b>Length</b>: &nbsp;{{ content.duration }}</span>
           </div>
         </div>
@@ -104,15 +108,20 @@
           }}<i class="fa fa-eye" aria-hidden="true"></i><br />
         </span>
         Share:
+        <a href="https://www.linkedin.com/shareArticle?url={{ url }}">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
         <a
-          href="whatsapp://send?text={{ url }}"
+          href="https://api.whatsapp.com/send?phone=9821115535&text={{ url }}"
           data-action="share/whatsapp/share"
           target="_blank"
         >
           <i class="whatsapp-green fa fa-whatsapp" aria-hidden="true"></i>
-          <i class="fa fa-facebook-f" aria-hidden="true"></i>
           <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
         </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}"
+          ><i class="fa fa-facebook-f" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
   </div>

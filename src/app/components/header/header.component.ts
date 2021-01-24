@@ -74,8 +74,8 @@ export class HeaderComponent implements OnInit {
 
       function setCookie(cname: any, cvalue: any, exdays: any) {
         var d = new Date();
-        // 30 days
-        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * validity);
+
+        d.setTime(d.getTime() + exdays * 1000 * 24 * 60 * 60);
         var expires = 'expires=' + d.toUTCString();
         document.cookie = cname + '=' + cvalue + '; ' + expires;
       }
@@ -111,12 +111,15 @@ export class HeaderComponent implements OnInit {
     if (event.key === 'Escape') {
       const res = document.getElementById('searchautocomplete-list');
       const inp = document.getElementById('search') as HTMLInputElement;
+
       if (res) {
         res.style.visibility = 'hidden';
-        inp.value = '';
       }
-      inp.classList.remove('full-search');
-      inp.classList.add('search');
+      if (inp) {
+        inp.value = '';
+        inp.classList.remove('full-search');
+        inp.classList.add('search');
+      }
     }
   }
   // sign out
@@ -234,10 +237,12 @@ export class HeaderComponent implements OnInit {
       'searchautocomplete-list'
     ) as HTMLDivElement;
 
-    if (elem.target.id !== 'search' && autosugg) {
+    if (elem.target.id !== 'search') {
       inp.value = '';
       inp.classList.remove('full-search');
       inp.classList.add('search');
+    }
+    if (autosugg) {
       autosugg.style.visibility = 'hidden';
     }
   }
@@ -249,9 +254,9 @@ export class HeaderComponent implements OnInit {
       'accept-cookie'
     ) as HTMLButtonElement;
     if (elem?.checked == true) {
-      proceed.disabled=false;
+      proceed.disabled = false;
     } else {
-      proceed.disabled=true;
+      proceed.disabled = true;
     }
   }
 }
