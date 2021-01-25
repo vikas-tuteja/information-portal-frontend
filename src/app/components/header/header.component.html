@@ -120,7 +120,7 @@
     [containerInside]="false"
     *ngIf="isDesktop"
   >
-    <!-- Navbar brand -->
+    <!-- Navbar brand desktop only header -->
     <div class="" class="header-left-panel"></div>
     <div class="" class="header-center-panel">
       <ul class="navbar-nav full-width input-icons">
@@ -129,20 +129,6 @@
             ><span class="pointer">Logo</span></a
           >
         </li>
-        <!-- Search form -->
-        <form class="form-inline md-form form-sm active-pink-2">
-          <input
-            class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
-            type="text"
-            placeholder="Search"
-            id="search"
-            name="search"
-            aria-label="Search"
-            autocomplete="off"
-            mdbInput
-            (keyup)="getSearchList()"
-          />
-        </form>
         <li class="nav-item" [ngClass]="{ active: selectedPage === 'home' }">
           <a class="each-nav white" mdbWavesEffect href=""
             ><span class="pointer">Home</span></a
@@ -153,7 +139,10 @@
             ><span class="pointer">News</span></a
           >
         </li>
-        <li class="nav-item" [ngClass]="{ active: selectedPage === 'articles' }">
+        <li
+          class="nav-item"
+          [ngClass]="{ active: selectedPage === 'articles' }"
+        >
           <a class="each-nav white" mdbWavesEffect href="/top-articles"
             ><span class="pointer">Articles</span></a
           >
@@ -174,45 +163,80 @@
             >Our Mission</a
           >
         </li>
-        <!-- <li
+        <li
           class="nav-item"
           [ngClass]="{ active: selectedPage === 'about-us' }"
         >
           <a class="each-nav white" mdbWavesEffect href="/about-us">About Us</a>
-        </li> -->
+        </li>
+        <li
+          class="nav-item"
+          [ngClass]="{ active: selectedPage === 'contact-us' }"
+        >
+          <a class="each-nav white" mdbWavesEffect href="/contact-us"
+            >Contact Us</a
+          >
+        </li>
+        <li class="nav-item" [ngClass]="{ active: selectedPage === 'faqs' }">
+          <a class="each-nav white" mdbWavesEffect href="/faqs">FAQs</a>
+        </li>
         <!-- Dropdown -->
-        <li class="nav-item"><a class="each-nav white">More..</a></li>
+        <!-- <li class="nav-item"><a class="each-nav white">More..</a></li> -->
+        <!-- Search form -->
+      </ul>
+      <span
+        class="nav-item img-no-padding float-right"
+        style="top: 0.5rem; position: absolute; right: 13%"
+      >
+        <form class="form-inline md-form form-sm active-pink-2">
+          <input
+            class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
+            type="text"
+            placeholder="Search"
+            id="search"
+            name="search"
+            aria-label="Search"
+            autocomplete="off"
+            mdbInput
+            (keyup)="getSearchList()"
+          />
+        </form>
+      </span>
+      <!-- Collapsible content -->
+    </div>
+    <div class="col-md-2">
+      <ul class="content-desktop float-right">
         <li class="nav-item" dropdown>
           <a
             dropdownToggle
             mdbWavesEffect
             type="button"
-            class="each-nav dropdown-toggle white pointer"
+            class="each-nav dropdown-toggle white pointer lines"
             mdbWavesEffect
           >
-            <span class="caret"></span
-          ></a>
+            <!-- <span class="lines"></span> -->
+            <i class="fa fa-bars"></i>
+          </a>
           <div
             *dropdownMenu
             class="dropdown-menu dropdown dropdown-primary"
             role="menu"
           >
             <!-- <a class="dropdown-item" mdbWavesEffect href="/top-articles"
-              ><span class="pointer">Articles</span></a
-            > -->
+            ><span class="pointer">Articles</span></a
+          > -->
             <!-- <a class="dropdown-item" mdbWavesEffect href="/popular-blogs"
-              ><span class="pointer">Blogs</span></a
-            > -->
-            <a class="dropdown-item" mdbWavesEffect href="/contact-us"
-              ><span class="pointer">Contact Us</span></a
-            >
-            <a class="dropdown-item" mdbWavesEffect href="/about-us"
-              ><span class="pointer">About Us</span></a
-            >
-            <a class="dropdown-item" mdbWavesEffect href="/faqs"
-              ><span class="pointer">FAQs</span></a
-            >
-            <div class="divider dropdown-divider"></div>
+            ><span class="pointer">Blogs</span></a
+          > -->
+            <!-- <a class="dropdown-item" mdbWavesEffect href="/contact-us"
+            ><span class="pointer">Contact Us</span></a
+          >
+          <a class="dropdown-item" mdbWavesEffect href="/about-us"
+            ><span class="pointer">About Us</span></a
+          >
+          <a class="dropdown-item" mdbWavesEffect href="/faqs"
+            ><span class="pointer">FAQs</span></a
+          > -->
             <a
               *ngIf="isLoggedIn"
               class="dropdown-item waves-light"
@@ -237,9 +261,7 @@
           </div>
         </li>
       </ul>
-      <!-- Collapsible content -->
     </div>
-    <div class="col-md-2"></div>
   </mdb-navbar>
 </div>
 <br />

@@ -1,4 +1,15 @@
 /* cookie options */
+.show>.dropdown-menu {
+  display: block;
+  top: 1rem !important;
+  left: -5.5rem !important;
+  width: 5rem;
+}
+
+.fa {
+  padding: 0 !important;
+}
+
 .page-overlay {
   background: gray;
   width: 100%;
@@ -8,6 +19,10 @@
   position: fixed;
   z-index: 102;
   opacity: 0.9;
+}
+
+.dropdown-toggle::after {
+  content: unset;
 }
 
 .cookie-disclaimer {
@@ -47,7 +62,7 @@ p {
 }
 
 .search {
-  width: 25rem !important;
+  width: 20rem !important;
 }
 
 .each-nav {
@@ -56,7 +71,7 @@ p {
 }
 
 .nav-item {
-  padding: 8px 16px;
+  padding: 0.2rem 0.6rem;
   /* overflow: hidden; */
 }
 
@@ -65,7 +80,7 @@ p {
 }
 
 li.nav-item.active {
-  /* border: 0.5px solid white !important; */
+  border-radius: 1rem;
   background-color: #4a8586 !important;
 }
 
@@ -97,7 +112,7 @@ li.nav-item.active {
   border-top: none;
   z-index: 99;
   top: 100%;
-  width: 25rem;
+  width: 20rem;
 }
 
 .autocomplete-items div {
