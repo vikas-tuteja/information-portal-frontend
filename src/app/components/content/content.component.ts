@@ -35,12 +35,14 @@ export class ContentComponent implements OnInit {
       if (url == '/top-articles') {
         this.category = 'articles'
         this.urlPath = 'articles'
-      } else if (url == '/popular-blogs') {
-        this.category = 'blogs'
-        this.urlPath = 'blogs'
-      } else {
+      } 
+      // else if (url == '/popular-blogs') {
+      //   this.category = 'blogs'
+      //   this.urlPath = 'blogs'
+      // }
+       else {
         this.category = 'news'
-        this.urlPath = 'latest-news'
+        this.urlPath = 'news'
       }
       this.getContents(this.page, this.category);
     });

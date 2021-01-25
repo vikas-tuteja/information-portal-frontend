@@ -1,161 +1,13 @@
 <app-header></app-header>
 <div class="center homepage-ht">
-  <div class="col-md-9 float-left">
-    <!-- Top Articles-->
-    <div class="ipsWidget ipsWidget_vertical ipsBox">
-      <h3 class="ipsType_reset ipsWidget_title badge-head">Top Articles</h3>
-    </div>
-    <span class="float-right badge-data blue pointer display-over"
-      ><a href="/top-articles">View All</a></span
-    >
-    <mdb-carousel
-      [isControls]="true"
-      class="badge-data carousel-multi-item multi-animation"
-      [type]="'carousel-multi-item'"
-      [animation]="'slide'"
-    >
-      <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span> -->
-      <mdb-carousel-item *ngFor="let item of articles; let i = index">
-        <div
-          [ngClass]="calculateClasses()"
-          class="min-height"
-          *ngFor="let card of item; let cardIndex = index"
-        >
-          <mdb-card class="my-1">
-            <img
-              class="image-col-3 img-no-padding"
-              src="{{ card.summary_image }}"
-              onerror="this.src='/assets/images/default.jpeg'"
-            />
-            <mdb-card-body>
-              <mdb-card-title>
-                <h4 class="card-head">{{ card.title }}</h4>
-              </mdb-card-title>
-              <p class="card-text">{{ card.summary }}</p>
-              <span class="float-left date-author-box">
-                <i class="fa fa-clock-o date-author">
-                  {{ card.created_at | date: "MMM dd yyyy, HH:mm" }}
-                </i>
-                &nbsp;<i class="fa fa-pencil-square-o date-author">
-                  {{ card.author }}</i
-                >
-              </span>
-              <span class="float-right news-read-more"
-                ><a class="blue" href="/articles/{{ card.slug }}"
-                  >Read More</a
-                ></span
-              >
-            </mdb-card-body>
-          </mdb-card>
-        </div>
-      </mdb-carousel-item>
-      <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span> -->
-    </mdb-carousel>
-    <br />
-    <!-- Top Blogs -->
-    <div class="ipsWidget ipsWidget_vertical ipsBox">
-      <h3 class="ipsType_reset ipsWidget_title badge-head">Popular Blogs</h3>
-    </div>
-    <span class="float-right badge-data blue pointer display-over"
-      ><a href="/popular-blogs">View All</a></span
-    >
-    <mdb-carousel
-      [isControls]="true"
-      class="badge-data carousel-multi-item multi-animation"
-      [type]="'carousel-multi-item'"
-      [animation]="'slide'"
-    >
-      <mdb-carousel-item *ngFor="let item of blogs; let i = index">
-        <div class="col-md-4" *ngFor="let card of item; let cardIndex = index">
-          <mdb-card class="my-1">
-            <img
-              class="image-col-3 img-no-padding"
-              src="{{ card.summary_image }}"
-              onerror="this.src='/assets/images/default.jpeg'"
-            />
-            <mdb-card-body>
-              <mdb-card-title>
-                <h4 class="card-head">{{ card.title }}</h4>
-              </mdb-card-title>
-              <p class="card-text">{{ card.summary }}</p>
-              <span class="float-left date-author-box">
-                <i class="fa fa-clock-o date-author">
-                  {{ card.created_at | date: "MMM dd yyyy, HH:mm" }}
-                </i>
-                <br /><i class="fa fa-pencil-square-o date-author">
-                  {{ card.author }}</i
-                >
-              </span>
-              <span class="float-right news-read-more"
-                ><a class="blue" href="/popular-blogs/{{ card.slug }}"
-                  >Read More</a
-                ></span
-              >
-            </mdb-card-body>
-          </mdb-card>
-        </div>
-      </mdb-carousel-item> </mdb-carousel
-    ><br />
-
-    <!-- Latest News for desktop -->
-    <div
-      class="home-widget ipsWidget ipsWidget_vertical ipsBox content-desktop"
-    >
-      <h3 class="ipsType_reset ipsWidget_title badge-head">Latest News</h3>
-      <div class="home-widget-content">
-        <div class="ipsPad badge-data">
-          <div class="row" *ngFor="let item of newsDesktop; index as i">
-            <div class="col-md-12 each-home-widget">
-              <div *ngIf="item.is_fake" class="stamp">
-                <img class="img-no-padding" src="/assets/images/fake.png" />
-              </div>
-              <span class="float-left">
-                <img
-                  class="image-col-3 img-no-padding"
-                  src="{{ item.summary_image }}"
-                  onerror="this.src='/assets/images/default.jpeg'"
-                />
-              </span>
-              <!--/Card image-->
-              <span class="float-left home-widget-data col-md-8">
-                <!--Card content-->
-                <h5 class="pink-text card-head">{{ item.title }}</h5>
-                <span class="card-text-3" style="height: 80px">
-                  {{ item.summary }}
-                </span>
-                <br />
-                <span class="float-left">
-                  <i class="fa fa-clock-o date-author">
-                    {{ item.created_at | date: "MMM dd yyyy, HH:mm" }}
-                  </i>
-                  &nbsp;<i class="fa fa-pencil-square-o date-author">
-                    {{ item.author }}</i
-                  >
-                </span>
-                <span class="float-right"
-                  ><a class="blue" href="/latest-news/{{ item.slug }}"
-                    >Read More</a
-                  ></span
-                >
-              </span>
-            </div>
-          </div>
-          <span class="float-right badge-data blue pointer display-over"
-            ><a href="/latest-news">View All</a></span
-          >
-        </div>
-      </div>
-    </div>
-    <br />
-    <!-- Latest News for mobile -->
-    <div class="content-mobile">
+  <div class="col-md-12 float-left">
+    <!-- News SECTION -->
+    <div class="col-md-9 float-left">
       <div class="ipsWidget ipsWidget_vertical ipsBox">
-        <h3 class="ipsType_reset ipsWidget_title badge-head">Latest News</h3>
+        <h3 class="ipsType_reset ipsWidget_title badge-head">News</h3>
       </div>
       <span class="float-right badge-data blue pointer display-over"
-        ><a href="/latest-news">View All</a></span
+        ><a href="/news">View All</a></span
       >
       <mdb-carousel
         [isControls]="true"
@@ -188,7 +40,7 @@
                   >
                 </span>
                 <span class="float-right news-read-more"
-                  ><a class="blue" href="/latest-news/{{ card.slug }}"
+                  ><a class="blue" href="/news/{{ card.slug }}"
                     >Read More</a
                   ></span
                 >
@@ -198,22 +50,128 @@
         </mdb-carousel-item>
       </mdb-carousel>
     </div>
+
+    <!-- Right panel -->
+    <div class="col-md-3 float-left content-desktop">
+      <app-right-panel></app-right-panel>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <!-- Top Articles-->
     <br />
+    <div class="col-md-6 float-left top-margin">
+      <div class="ipsWidget ipsWidget_vertical ipsBox img-no-padding">
+        <h3 class="ipsType_reset ipsWidget_title badge-head">Top Articles</h3>
+      </div>
+      <!-- <span class="float-right badge-data blue pointer display-over col-md-6"
+        ><a href="/news">View All</a></span
+      > -->
+      <!-- touch swipe carousal library for Articles -->
+      <div class="float-left">
+        <div class="ipsPad badge-data">
+          <div
+            id="myCarousel"
+            class="carousel slide carousel--fade shadow carousel-article"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#myCarousel"
+                  *ngFor="let item of articles; index as i"
+                  data-slide-to="i"
+                  [ngClass]="calculateActiveClass(i)"
+                ></li>
+              </ol>
+
+              <div
+                class="carousel-item articles-bg"
+                *ngFor="let item of articles; index as i"
+                [ngClass]="calculateActiveClass(i)"
+              >
+                <a href="/news/{{ item.slug }}"
+                  ><img
+                    class="img-fluid-art img-no-padding"
+                    src="{{ item.summary_image }}"
+                    onerror="this.src='/assets/images/default.jpeg'"
+                    alt="First slide"
+                /></a>
+                <div class="container">
+                  <div class="carousel-caption text-left">
+                    <h2 class="display-4 font-weight-bold">
+                      <a class="white" href="/news/{{ item.slug }}">{{
+                        item.title
+                      }}</a>
+                    </h2>
+                    <p class="badge-data lead font-weight-bold card-text-1">
+                      {{ item.summary }}
+                    </p>
+                    <p>
+                      <!-- <span class="float-left">
+                      <i class="fa fa-clock-o date-author">
+                        {{ item.created_at | date: "MMM dd yyyy, HH:mm" }}
+                      </i>
+                      &nbsp;<i class="fa fa-pencil-square-o date-author">
+                        {{ item.author }}</i
+                      > </span
+                    ><br /> -->
+                      <span class="float-right"
+                        ><a class="white" href="/news/{{ item.slug }}"
+                          >Read More</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                class="carousel-control-prev"
+                href="#carouselControls"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+
+              <a
+                class="carousel-control-next"
+                href="#carouselControls"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <br />
+
     <!-- Top Audio Libraries -->
-    <div class="home-widget ipsWidget ipsWidget_vertical ipsBox">
-      <h3 class="ipsType_reset ipsWidget_title badge-head">
-        Top Audio Libraries
-      </h3>
+    <div
+      class="home-widget top-margin ipsWidget ipsWidget_vertical img-no-padding ipsBox col-md-6 float-left"
+    >
+      <h3 class="ipsType_reset ipsWidget_title badge-head">Audio Library</h3>
       <div class="home-widget-content">
         <div class="ipsPad badge-data">
           <div class="row" *ngFor="let item of audioLibrary; index as i">
             <div class="col-md-12 each-home-widget">
+              <hr *ngIf="i">
               <span class="float-left col-md-2 audio-image-container"
                 ><br />
-                <!-- <audio controls style="width: -webkit-fill-available;"
-                                 src="{{item.audio_file}}" type="audio/mp3">
-                                  Your browser does not support the audio element.
-                                  </audio> -->
                 <a href="/audio-books/{{ item.slug }}">
                   <img
                     class="img-no-padding audio-image"
@@ -222,16 +180,14 @@
                   />
                 </a>
               </span>
-              <!--/Card image-->
               <span
                 class="float-left home-widget-data col-md-10 audio-text-container"
               >
-                <!--Card content-->
                 <h5 class="pink-text card-head">{{ item.title }}</h5>
                 <span class="card-text-1">
                   {{ item.summary }}
                 </span>
-                <br />
+                <!-- <br /> -->
                 <span class="float-left">
                   <i class="fa fa-clock-o date-author">
                     {{ item.created_at | date: "MMM dd yyyy, HH:mm" }}
@@ -248,15 +204,14 @@
               </span>
             </div>
           </div>
-          <span
-            class="float-right badge-data blue pointer display-over"
+          <span class="float-right badge-data blue pointer display-over"
             ><a href="/audio-books">View All</a></span
           >
         </div>
       </div>
     </div>
     <br />
+    <div class="content-mobile"><app-right-panel></app-right-panel></div>
   </div>
-  <app-right-panel></app-right-panel>
 </div>
 <app-footer></app-footer>

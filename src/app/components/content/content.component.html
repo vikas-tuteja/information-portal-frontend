@@ -11,11 +11,12 @@
           <div *ngIf="content.is_fake" class="stamp">
             <img class="img-no-padding" src="/assets/images/fake.png" />
           </div>
-          <img
-            class="image-col-3 img-no-padding"
-            onerror="this.src='/assets/images/default.jpeg'"
-            src="{{ content.summary_image }}"
-          />
+          <a href="/{{ urlPath }}/{{ content.slug }}"
+            ><img
+              class="image-col-3 img-no-padding"
+              onerror="this.src='/assets/images/default.jpeg'"
+              src="{{ content.summary_image }}"
+          /></a>
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -39,7 +40,7 @@
             ></span
           >
           <span class="news-read-more"
-            ><a class="blue" href="/{{urlPath}}/{{ content.slug }}"
+            ><a class="blue" href="/{{ urlPath }}/{{ content.slug }}"
               >Read More</a
             ></span
           >

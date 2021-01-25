@@ -1,12 +1,12 @@
-<div class="col-md-3 float-left">
+<div class="">
   <!-- Our Inventory -->
   <div class="ipsWidget ipsWidget_vertical ipsBox inventory-ht">
     <h3 class="ipsType_reset ipsWidget_title badge-head">Our Inventory</h3>
     <div class="ipsWidget_inner ipsPad badge-data">
-      <a href="/latest-news"
+      <a href="/news"
         ><span class="badge badge-pill badge-light desktop-badge">
           <span class="badge-head blue">105</span><br />
-          <span class="badge-data blue">Exposed <br />Fake News</span>
+          <span class="badge-data blue">News<br>Published</span>
         </span></a
       >
       <a href="/audio-books"
@@ -27,7 +27,7 @@
           >
         </span></a
       >
-      <a href="/popular-blogs"
+      <!-- <a href="/popular-blogs"
         ><span class="badge badge-pill badge-light desktop-badge">
           <span class="badge-head blue">91</span><br />
           <span class="badge-data blue"
@@ -35,24 +35,24 @@
             Published</span
           >
         </span></a
-      >
+      > -->
       <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>Donate</a> -->
     </div>
   </div>
-  <br />
+  
   <!-- Donation -->
   <div class="ipsWidget ipsWidget_vertical ipsBox">
     <h3 class="ipsType_reset ipsWidget_title badge-head">Support Us</h3>
     <div class="ipsWidget_inner ipsPad badge-data">
       <div class="ipsType_richText ipsType_reset ipsType_medium pad">
         We are an NGO that works towards spreading awareness and exposing fake
-        news, etc. Kindly support us by donating.<br />
+        news, etc. Kindly support us by donating.
       </div>
       <!-- <a mdbBtn class="waves-light blue-bg" mdbWavesEffect>Donate</a> -->
       <button (click)="donate()">Donate</button>
     </div>
   </div>
-  <br />
+  
   <!-- SignIn/Register -->
   <div class="ipsWidget ipsWidget_vertical ipsBox" *ngIf="!isLoggedIn">
     <h3 class="ipsType_reset ipsWidget_title badge-head">SignIn/Register</h3>
@@ -60,8 +60,6 @@
       <div class="ipsType_richText ipsType_reset ipsType_medium pad">
         Gain access to all our features, Kindly Login for the same
       </div>
-      <br />
-
       <a href="/signin" mdbBtn class="waves-light blue-bg white" mdbWavesEffect
         >SignIn</a
       >

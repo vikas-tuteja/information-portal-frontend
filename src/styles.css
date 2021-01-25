@@ -22,6 +22,10 @@ img {
   padding: 0rem !important;
 }
 
+.top-margin{
+  margin-top: 2rem;
+}
+
 .btn {
   padding: 0.63rem 1.6rem !important;
 }
@@ -149,12 +153,12 @@ hr {
 }
 
 .badge-head {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .badge-data {
-  font-size: 1rem;
+  font-size: 1rem !important;
   font-weight: 400;
 }
 
@@ -172,7 +176,7 @@ hr {
 
 .date-author {
   padding: 0;
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
   color: darkgray;
   margin: 0;
   width: 200px;
@@ -203,11 +207,15 @@ a:hover {
 
 .home-widget-data {
   /* width: 580px; */
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .each-home-widget {
-  margin-bottom: 1%;
+  /* margin-bottom: 1%; */
+}
+
+.each-home-widget:after {
+  border-bottom: 1px solid gray;
 }
 
 /* home page and right pane css --starts */
@@ -216,6 +224,7 @@ a:hover {
   border: 1px solid #e0e0e0;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  margin-bottom: 0.5rem;
 }
 
 .ipsList_reset {
@@ -241,7 +250,7 @@ a:hover {
 .ipsPad,
 .ipsApp ul.ipsPad,
 .ipsApp ol.ipsPad {
-  padding: 15px;
+  padding: 6px;
 }
 
 .stamp {
@@ -434,6 +443,10 @@ a:hover {
     font-weight: bold;
   }
 
+  .home-widget {
+    height: 590px !important;
+  }
+
   .home-widget-data {
     padding: 0.5rem;
   }
@@ -514,7 +527,6 @@ a:hover {
     width: 13rem !important;
   }
 }
-
 
 @media only screen and (max-width: 325px) {
   .audio-text-container {

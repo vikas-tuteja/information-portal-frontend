@@ -23,10 +23,10 @@ export class BreadcrumsComponent implements OnInit {
         currentPage = false;
       }
       switch (pages[i]) {
-        case 'latest-news':
+        case 'news':
           this.bcList.push({
-            name: 'Latest News',
-            url: !currentPage ? '/latest-news' : false,
+            name: 'News',
+            url: !currentPage ? '/news' : false,
           });
           break;
         case 'top-articles':
@@ -41,18 +41,18 @@ export class BreadcrumsComponent implements OnInit {
             url: !currentPage ? '/top-articles' : false,
           });
           break;
-        case 'popular-blogs':
-          this.bcList.push({
-            name: 'Popular Blogs',
-            url: !currentPage ? '/poular-blogs' : false,
-          });
-          break;
-        case 'blogs':
-          this.bcList.push({
-            name: 'Popular Blogs',
-            url: !currentPage ? '/poular-blogs' : false,
-          });
-          break;
+        // case 'popular-blogs':
+        //   this.bcList.push({
+        //     name: 'Popular Blogs',
+        //     url: !currentPage ? '/popular-blogs' : false,
+        //   });
+        //   break;
+        // case 'blogs':
+        //   this.bcList.push({
+        //     name: 'Popular Blogs',
+        //     url: !currentPage ? '/popular-blogs' : false,
+        //   });
+        //   break;
         case 'audio-books':
           this.bcList.push({
             name: 'Audio Library',

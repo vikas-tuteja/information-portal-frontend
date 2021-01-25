@@ -3,6 +3,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 import { Audio, ContentDetail } from 'src/app/models/content';
 import { ContentsService } from 'src/app/services/contents.service';
 import { SharedService } from 'src/app/services/shared.service';
+declare var $: any;
 
 @Component({
   selector: 'app-homepage',
@@ -12,7 +13,7 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class HomepageComponent implements OnInit {
   articles!: any[];
-  blogs!: any[];
+  // blogs!: any[];
   news!: any[];
   newsDesktop!: ContentDetail[];
   audioLibrary!: Audio[];
@@ -37,6 +38,44 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    $(document).ready(function () {
+      $('.carousel-article').carousel({
+        interval: false,
+        pause: true,
+        touch: true,
+      });
+
+      $('.carousel-article .carousel-inner').swipe({
+        swipeLeft: function (
+          event: any,
+          direction: any,
+          distance: any,
+          duration: any,
+          fingerCount: any
+        ) {
+          this.parent().carousel('next');
+        },
+        swipeRight: function () {
+          this.parent().carousel('prev');
+        },
+        // threshold: 0,
+        tap: function (event: any, target: any) {
+          window.location = $(this)
+            .find('.carousel-item.active a')
+            .attr('href');
+        },
+        excludedElements: 'a, label, button, input, select, textarea, .noSwipe',
+      });
+
+      $('.carousel-article .carousel-control-prev').on('click', function () {
+        $('.carousel-article').carousel('prev');
+      });
+
+      $('.carousel-article .carousel-control-next').on('click', function () {
+        $('.carousel-article').carousel('next');
+      });
+    });
+
     const isMobile = this.deviceService.isMobile();
     this.isTablet = this.deviceService.isTablet();
 
@@ -52,18 +91,20 @@ export class HomepageComponent implements OnInit {
     this.contentService
       .getCategoryWiseContent(1, 'articles')
       .subscribe((data) => {
-        this.articles = this.chunk(data.results, this.no_of_cards);
+        // this.articles = this.chunk(data.results, this.no_of_cards);
+        this.articles = data.results;
       });
 
     // get blogs
-    this.contentService.getCategoryWiseContent(1, 'blogs').subscribe((data) => {
-      this.blogs = this.chunk(data.results, this.no_of_cards);
-    });
+    // this.contentService.getCategoryWiseContent(1, 'blogs').subscribe((data) => {
+    //   this.blogs = this.chunk(data.results, this.no_of_cards);
+    // });
 
     // get news
     this.contentService.getCategoryWiseContent(1, 'news').subscribe((data) => {
       this.news = this.chunk(data.results, this.no_of_cards);
-      this.newsDesktop = data.results;
+      // this.newsDesktop = data.results;
+      this.newsDesktop = this.news;
     });
 
     // get audio librarys
@@ -97,5 +138,9 @@ export class HomepageComponent implements OnInit {
     } else {
       return 'col-md-4';
     }
+  }
+
+  calculateActiveClass(num: number) {
+    return num === 0 ? 'active' : '';
   }
 }

@@ -74,7 +74,7 @@
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/latest-news">Latest News</a>
+              <a href="/news">News</a>
             </li>
             <li>
               <a href="/audio-books">Audio Books</a>
@@ -82,9 +82,9 @@
             <li>
               <a href="/top-articles">Top Articles</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/popular-blogs">Popular Blogs</a>
-            </li>
+            </li> -->
             <li>
               <a href="/our-mission">Our Mission</a>
             </li>
@@ -144,16 +144,18 @@
           />
         </form>
         <li class="nav-item" [ngClass]="{ active: selectedPage === 'home' }">
-          <a class="each-nav white" mdbWavesEffect href="/"
+          <a class="each-nav white" mdbWavesEffect href=""
             ><span class="pointer">Home</span></a
           >
         </li>
-        <li
-          class="nav-item"
-          [ngClass]="{ active: selectedPage === 'latest-news' }"
-        >
-          <a class="each-nav white" mdbWavesEffect href="/latest-news"
-            ><span class="pointer">Latest News</span></a
+        <li class="nav-item" [ngClass]="{ active: selectedPage === 'news' }">
+          <a class="each-nav white" mdbWavesEffect href="/news"
+            ><span class="pointer">News</span></a
+          >
+        </li>
+        <li class="nav-item" [ngClass]="{ active: selectedPage === 'articles' }">
+          <a class="each-nav white" mdbWavesEffect href="/top-articles"
+            ><span class="pointer">Articles</span></a
           >
         </li>
         <li
@@ -195,12 +197,12 @@
             class="dropdown-menu dropdown dropdown-primary"
             role="menu"
           >
-            <a class="dropdown-item" mdbWavesEffect href="/top-articles"
+            <!-- <a class="dropdown-item" mdbWavesEffect href="/top-articles"
               ><span class="pointer">Articles</span></a
-            >
-            <a class="dropdown-item" mdbWavesEffect href="/popular-blogs"
+            > -->
+            <!-- <a class="dropdown-item" mdbWavesEffect href="/popular-blogs"
               ><span class="pointer">Blogs</span></a
-            >
+            > -->
             <a class="dropdown-item" mdbWavesEffect href="/contact-us"
               ><span class="pointer">Contact Us</span></a
             >

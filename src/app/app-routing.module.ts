@@ -18,16 +18,16 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
 
   // news
-  { path: 'latest-news', component: ContentComponent },
-  { path: 'latest-news/:slug', component: ContentDetailComponent },
+  { path: 'news', component: ContentComponent },
+  { path: 'news/:slug', component: ContentDetailComponent },
 
   // articles
   { path: 'top-articles', component: ContentComponent },
   { path: 'articles/:slug', component: ContentDetailComponent },
 
   // popular blogs
-  { path: 'popular-blogs', component: ContentComponent },
-  { path: 'blogs/:slug', component: ContentDetailComponent },
+  // { path: 'popular-blogs', component: ContentComponent },
+  // { path: 'blogs/:slug', component: ContentDetailComponent },
 
   // Audio Library
   { path: 'audio-books', component: LibraryComponent },
