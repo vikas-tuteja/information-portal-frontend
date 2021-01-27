@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="row content-detail">
   <div class="col-md-2"></div>
-  <div class="col-md-8">
+  <div class="col-md-8" *ngIf="content">
     <app-breadcrums></app-breadcrums>
     <div class="pad">
       <div class="heading">{{ content.title }}</div>
@@ -124,6 +124,16 @@
         ></a>
       </div>
     </div>
+  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8" style="margin-left: 1rem;">
+    <app-comment
+      *ngIf="content"
+      postType="library"
+      postId="{{ content.id }}"
+      
+    ></app-comment>
   </div>
 </div>
 <app-footer></app-footer>

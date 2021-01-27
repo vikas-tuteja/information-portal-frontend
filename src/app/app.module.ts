@@ -27,6 +27,8 @@ import { BreadcrumsComponent } from './components/breadcrums/breadcrums.componen
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { CommentComponent } from './components/comment/comment.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     LibraryDetailComponent,
     BreadcrumsComponent,
     LoaderComponent,
+    CommentComponent,
   ],
   imports: [
     MatIconModule,
@@ -69,6 +72,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
       useClass: LoaderInterceptor,
       multi: true,
     },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

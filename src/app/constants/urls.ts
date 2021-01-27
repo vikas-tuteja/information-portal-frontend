@@ -32,6 +32,22 @@ export class API {
     return `${BACKEND_URL}api/search/?search_string=${search_string}`;
   }
 
+  static GET_COMMENTS_LIST(post_type: string, post_id: string, page: number) {
+    return `${BACKEND_URL}api/reaction/${post_type}/${post_id}/?page=${page}`;
+  }
+
+  static CREATE_REACTION() {
+    return `${BACKEND_URL}api/reaction/create/`;
+  }
+
+  static EDIT_REACTION(reactionId: number) {
+    return `${BACKEND_URL}api/reaction/${reactionId}/edit/`;
+  }
+
+  static DELETE_REACTION(reactionId: number) {
+    return `${BACKEND_URL}api/reaction/${reactionId}/delete/`;
+  }
+
   public static POST_SIGNUP = `${BACKEND_URL}myaccount/signup/`;
   public static POST_SIGNIN = `${BACKEND_URL}myaccount/signin/`;
 

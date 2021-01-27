@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MESSAGES } from 'src/app/constants/messages';
 import { SharedService } from 'src/app/services/shared.service';
@@ -11,15 +12,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SigninComponent implements OnInit {
   private isChecked!: boolean;
-
+  private next!: string;
 
   constructor(
     private toastr: ToastrService,
+    private route: ActivatedRoute,
     private userSerivce: UserService,
     private sharedService: SharedService
   ) { }
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe((qpMap) => {
+      this.next = qpMap.get('next') || '/';
+    });
   }
 
   signInPostTrigger() {
@@ -42,7 +47,7 @@ export class SigninComponent implements OnInit {
           this.userSerivce.setAuthUser(data);
           this.toastr.success(data.message);
           setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = this.next;
           }, 1500);
         }
         else {

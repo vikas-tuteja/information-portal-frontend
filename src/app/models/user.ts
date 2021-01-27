@@ -6,3 +6,8 @@ export interface SignUp {
     confirm_password: string;
     email: string;
 }
+
+export interface UserName {
+    fname: string;
+    lname: string;
+}

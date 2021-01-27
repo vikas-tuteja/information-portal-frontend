@@ -29,14 +29,6 @@ export class HomepageComponent implements OnInit {
     private sharedService: SharedService
   ) {}
 
-  chunk(arr: any, chunkSize: number) {
-    let R = [];
-    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
-      R.push(arr.slice(i, i + chunkSize));
-    }
-    return R;
-  }
-
   ngOnInit(): void {
     $(document).ready(function () {
       $('.carousel-article').carousel({
@@ -118,6 +110,14 @@ export class HomepageComponent implements OnInit {
 
     // cheked if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
+  }
+
+  chunk(arr: any, chunkSize: number) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
+    }
+    return R;
   }
 
   correctArrowCss(side: any) {

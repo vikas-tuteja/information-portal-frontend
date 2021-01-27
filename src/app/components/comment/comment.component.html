@@ -1,0 +1,125 @@
+<hr />
+<a class="blue pointer" (click)="createReaction('Like')" *ngIf="canLike"
+  >Like</a
+>
+<a class="blue pointer" (click)="cannotLike()" *ngIf="!canLike">Like</a>
+<span class="badge-data"
+  >&nbsp;&nbsp;{{ totalLikes }} Likes, {{ totalComments }} Comments</span
+>
+<hr />
+<span class="badge-head">Comments</span>
+
+<ul class="comment-section">
+  <li class="write-new">
+    <div>
+      <textarea
+        placeholder="Write your comment here"
+        name="comment"
+        id="comment"
+      ></textarea>
+      <div *ngIf="isLoggedIn">
+        <button (click)="createReaction('Comment')">Submit</button>
+      </div>
+      <div *ngIf="!isLoggedIn" class="text-right">
+        <span>Kindly Login to Like or Comment here&nbsp;&nbsp;&nbsp;</span>
+        <a
+          href="/signin?next={{url}}"
+          mdbBtn
+          class="waves-light blue-bg white"
+          mdbWavesEffect
+          >SignIn</a
+        >
+        <a
+          href="/signup?next={{url}}"
+          mdbBtn
+          class="waves-light blue-bg white"
+          mdbWavesEffect
+          >Register</a
+        >
+      </div>
+    </div>
+  </li>
+  <br /><br /><br /><br />
+
+  <li class="comment user-comment" *ngFor="let comment of comments; index as i">
+    <div class="info">
+      <a class="float-left"
+        >{{ comment.user.fname }} {{ comment.user.lname }}</a
+      >
+      <span class="float-left">{{
+        comment.created_at | date: "MMM dd yyyy, HH:mm"
+      }}</span>
+    </div>
+    <p
+      [ngClass]="{
+        peven: i % 2 == 0,
+        podd: i % 2 != 0
+      }"
+    >
+      {{ comment.text }}
+      <span class="float-right pointer"
+        ><i
+          class="fa fa-trash"
+          (click)="basicModal.show()"
+          (click)="setDeleteConfirmation($event)"
+          [attr.data-reactionId]="comment.id"
+        ></i
+      ></span>
+      <!-- <span class="float-right pointer"><i class="fa fa-edit"></i></span> -->
+    </p>
+  </li>
+  <div
+    id="deletemodal"
+    mdbModal
+    #basicModal="mdbModal"
+    class="modal fade"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myBasicModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="basicModal.hide()"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">
+            Delete Comment Confirmation
+          </h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this comment?
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            mdbBtn
+            class="waves-light basic-btn"
+            aria-label="Close"
+            (click)="basicModal.hide()"
+            mdbWavesEffect
+            id="closeButton"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            mdbBtn
+            color="danger"
+            class="relative waves-light"
+            (click)="deleteComment()"
+            mdbWavesEffect
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ul>

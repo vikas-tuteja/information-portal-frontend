@@ -38,6 +38,7 @@
         ><i class="fa fa-facebook-f" aria-hidden="true"></i
       ></a>
     </div>
+    <app-comment *ngIf="id" postType='content' postId='{{id}}'></app-comment>
   </div>
 </div>
 <app-footer></app-footer>

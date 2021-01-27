@@ -30,6 +30,10 @@ img {
   padding: 0.63rem 1.6rem !important;
 }
 
+.basic-btn {
+  background-color: rgba(239, 239, 239) !important;
+}
+
 .white-bg {
   background-color: white !important;
 }
@@ -41,7 +45,7 @@ img {
 
 .blue {
   /* color: #3f729b !important; */
-  color: cadetblue;
+  color: cadetblue !important;
 }
 
 .white {

@@ -32,7 +32,6 @@ export class LibraryDetailComponent implements OnInit {
   getLibraryDetails(slug: string) {
     this.contentService.getLibraryDetail(slug).subscribe((data) => {
       this.content = data;
-      console.log(data);
     });
   }
 }

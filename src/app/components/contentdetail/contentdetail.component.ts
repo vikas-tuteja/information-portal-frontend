@@ -19,6 +19,7 @@ export class ContentDetailComponent implements OnInit {
   views!: number;
   url!: string;
   is_fake!: boolean;
+  id!: number;
 
   constructor(
     private router: Router,
@@ -51,6 +52,7 @@ export class ContentDetailComponent implements OnInit {
       this.createdAt = data.created_at;
       this.views = data.views;
       this.is_fake = data.is_fake;
+      this.id = data.id;
     });
   }
 }
