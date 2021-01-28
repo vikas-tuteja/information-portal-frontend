@@ -1,5 +1,5 @@
 /* cookie options */
-.show>.dropdown-menu {
+.show > .dropdown-menu {
   display: block;
   top: 1rem !important;
   left: -5.5rem !important;
@@ -19,6 +19,7 @@
   position: fixed;
   z-index: 102;
   opacity: 0.9;
+  display: none;
 }
 
 .dropdown-toggle::after {
@@ -35,6 +36,7 @@
   height: 20rem;
   position: fixed;
   opacity: 0.9;
+  display: none;
 }
 
 p {

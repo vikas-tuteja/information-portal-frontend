@@ -52,7 +52,7 @@
     </div>
 
     <!-- Right panel -->
-    <div class="col-md-3 float-left content-desktop">
+    <div class="col-md-3 float-left content-desktop" *ngIf="isDeskTop">
       <app-right-panel></app-right-panel>
     </div>
   </div>
@@ -169,7 +169,7 @@
         <div class="ipsPad badge-data">
           <div class="row" *ngFor="let item of audioLibrary; index as i">
             <div class="col-md-12 each-home-widget">
-              <hr *ngIf="i">
+              <hr *ngIf="i" />
               <span class="float-left col-md-2 audio-image-container"
                 ><br />
                 <a href="/audio-books/{{ item.slug }}">
@@ -211,7 +211,9 @@
       </div>
     </div>
     <br />
-    <div class="content-mobile"><app-right-panel></app-right-panel></div>
+    <div class="content-mobile" *ngIf="!isDeskTop">
+      <app-right-panel></app-right-panel>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

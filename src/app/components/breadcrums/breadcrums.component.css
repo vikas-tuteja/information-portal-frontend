@@ -29,7 +29,8 @@ ul {
 
 @media only screen and (max-width: 768px) {
   ul {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem !important;
+    padding-bottom: 0rem !important ;
   }
 
   .breadcrums > li {

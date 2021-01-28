@@ -70,6 +70,9 @@ export class HeaderComponent implements OnInit {
       if (cookie === true) {
         cookieContent.hide();
         pageOverlay.hide();
+      } else {
+        cookieContent.show();
+        pageOverlay.show();
       }
 
       function setCookie(cname: any, cvalue: any, exdays: any) {

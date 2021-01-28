@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { CONSTANTS } from '../constants/constants';
 import { API } from '../constants/urls';
 import { Comments } from '../models/comments';
 
@@ -21,10 +22,10 @@ export class CommentsService {
   getComments(
     post_type: string,
     post_id: string,
-    page: number = 1
+    pageSize: number = CONSTANTS.PAGE_SIZE
   ): Observable<Comments> {
     return this.http.get<Comments>(
-      API.GET_COMMENTS_LIST(post_type, post_id, page)
+      API.GET_COMMENTS_LIST(post_type, post_id, pageSize)
     );
   }
 

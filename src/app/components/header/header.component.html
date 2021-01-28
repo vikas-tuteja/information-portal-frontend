@@ -43,9 +43,13 @@
 </div>
 
 <!--Navbar-->
+<a class="menuBtn">
+  <span class="lines"></span>
+</a>
 <div class="blue-bg">
   <!-- Mobile only header -->
   <div class="" *ngIf="!isDesktop">
+    
     <div class="mainContainer">
       <header>
         <a class="each-nav white" mdbWavesEffect href="/"
@@ -65,9 +69,7 @@
             (click)="cssSetUp()"
           />
         </form>
-        <a class="menuBtn">
-          <span class="lines"></span>
-        </a>
+        
         <nav class="mainMenu">
           <ul>
             <li>

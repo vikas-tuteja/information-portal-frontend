@@ -30,6 +30,10 @@ export class HomepageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const isMobile = this.deviceService.isMobile();
+    this.isTablet = this.deviceService.isTablet();
+    this.isDeskTop = this.deviceService.isDesktop();
+
     $(document).ready(function () {
       $('.carousel-article').carousel({
         interval: false,
@@ -68,11 +72,6 @@ export class HomepageComponent implements OnInit {
       });
     });
 
-    const isMobile = this.deviceService.isMobile();
-    this.isTablet = this.deviceService.isTablet();
-
-    this.isDeskTop = this.deviceService.isDesktop();
-
     if (isMobile) {
       this.no_of_cards = 1;
     } else if (this.isTablet) {
@@ -83,7 +82,6 @@ export class HomepageComponent implements OnInit {
     this.contentService
       .getCategoryWiseContent(1, 'articles')
       .subscribe((data) => {
-        // this.articles = this.chunk(data.results, this.no_of_cards);
         this.articles = data.results;
       });
 
@@ -95,7 +93,6 @@ export class HomepageComponent implements OnInit {
     // get news
     this.contentService.getCategoryWiseContent(1, 'news').subscribe((data) => {
       this.news = this.chunk(data.results, this.no_of_cards);
-      // this.newsDesktop = data.results;
       this.newsDesktop = this.news;
     });
 

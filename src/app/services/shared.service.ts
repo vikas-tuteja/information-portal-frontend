@@ -1,4 +1,8 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { API } from '../constants/urls';
+import { Inventory } from '../models/shared';
 
 import { UserService } from './user.service';
 
@@ -6,7 +10,7 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class SharedService {
-  constructor(private userService: UserService) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   // to check all values in a hash and return false if any empty
   validate(data: any) {
@@ -57,5 +61,10 @@ export class SharedService {
       );
     }
     return inner;
+  }
+
+  // get inventory details
+  getInventoryDetails():Observable<Inventory> {
+    return this.http.get<Inventory>(API.GET_INVENTORY_DETAILS)
   }
 }

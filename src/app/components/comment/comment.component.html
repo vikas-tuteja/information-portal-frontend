@@ -2,12 +2,17 @@
 <a class="blue pointer" (click)="createReaction('Like')" *ngIf="canLike"
   >Like</a
 >
-<a class="blue pointer" (click)="cannotLike()" *ngIf="!canLike">Like</a>
-<span class="badge-data"
-  >&nbsp;&nbsp;{{ totalLikes }} Likes, {{ totalComments }} Comments</span
+&nbsp;&nbsp;<a class="blue pointer" (click)="cannotLike()" *ngIf="!canLike"
+  >Like</a
 >
+<span class="badge-data" *ngIf="totalLikes || totalComments"
+  >&nbsp;&nbsp; <span id="totalLikes">{{ totalLikes }}</span> Like<span
+    *ngIf="totalLikes > 1"
+    >s</span
+  >, {{ totalComments }} Comment<span *ngIf="totalComments > 1">s</span>
+</span>
 <hr />
-<span class="badge-head">Comments</span>
+<span class="badge-head">Post a Comment</span>
 
 <ul class="comment-section">
   <li class="write-new">
@@ -16,31 +21,25 @@
         placeholder="Write your comment here"
         name="comment"
         id="comment"
+        maxlength="255"
       ></textarea>
+      <span>&nbsp;255 characters allowed...</span>
       <div *ngIf="isLoggedIn">
         <button (click)="createReaction('Comment')">Submit</button>
+        <br>
       </div>
       <div *ngIf="!isLoggedIn" class="text-right">
-        <span>Kindly Login to Like or Comment here&nbsp;&nbsp;&nbsp;</span>
-        <a
-          href="/signin?next={{url}}"
-          mdbBtn
-          class="waves-light blue-bg white"
-          mdbWavesEffect
-          >SignIn</a
-        >
-        <a
-          href="/signup?next={{url}}"
-          mdbBtn
-          class="waves-light blue-bg white"
-          mdbWavesEffect
-          >Register</a
+        <span
+          >Kindly
+          <a class="blue" href="/signin?next={{ url }}">SignIn</a>&nbsp;/
+          <a class="blue" href="/signup?next={{ url }}">SignUp</a> to Like or
+          Comment here&nbsp;&nbsp;&nbsp;</span
         >
       </div>
     </div>
   </li>
-  <br /><br /><br /><br />
-
+  <br />
+  <span class="badge-data" *ngIf="totalComments">&nbsp;&nbsp;Latest Comments<br /><br /></span>
   <li class="comment user-comment" *ngFor="let comment of comments; index as i">
     <div class="info">
       <a class="float-left"
@@ -67,6 +66,11 @@
       ></span>
       <!-- <span class="float-right pointer"><i class="fa fa-edit"></i></span> -->
     </p>
+  </li>
+  <li *ngIf="totalCommentsInDB > totalComments">
+    <a class="pointer content-data blue" (click)="loadMoreCommments()"
+      >Load more comments...</a
+    >
   </li>
   <div
     id="deletemodal"
@@ -111,8 +115,7 @@
           <button
             type="button"
             mdbBtn
-            color="danger"
-            class="relative waves-light"
+            class="relative waves-light white"
             (click)="deleteComment()"
             mdbWavesEffect
           >

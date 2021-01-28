@@ -33,7 +33,7 @@ export class API {
   }
 
   static GET_COMMENTS_LIST(post_type: string, post_id: string, page: number) {
-    return `${BACKEND_URL}api/reaction/${post_type}/${post_id}/?page=${page}`;
+    return `${BACKEND_URL}api/reaction/${post_type}/${post_id}/?page_size=${page}`;
   }
 
   static CREATE_REACTION() {
@@ -48,6 +48,7 @@ export class API {
     return `${BACKEND_URL}api/reaction/${reactionId}/delete/`;
   }
 
+  public static GET_INVENTORY_DETAILS = `${BACKEND_URL}api/inventory/`;
   public static POST_SIGNUP = `${BACKEND_URL}myaccount/signup/`;
   public static POST_SIGNIN = `${BACKEND_URL}myaccount/signin/`;
 

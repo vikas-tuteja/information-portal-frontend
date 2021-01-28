@@ -2,16 +2,16 @@
   <!-- Our Inventory -->
   <div class="ipsWidget ipsWidget_vertical ipsBox inventory-ht">
     <h3 class="ipsType_reset ipsWidget_title badge-head">Our Inventory</h3>
-    <div class="ipsWidget_inner ipsPad badge-data" style="text-align: center;">
+    <div class="ipsWidget_inner ipsPad badge-data" *ngIf="inventory" style="text-align: center;">
       <a href="/news"
         ><span class="badge badge-pill badge-light desktop-badge">
-          <span class="badge-head blue">105</span><br />
+          <span class="badge-head blue">{{inventory.news}}</span><br />
           <span class="badge-data blue">News<br>Published</span>
         </span></a
       >
       <a href="/audio-books"
         ><span class="badge badge-pill badge-light desktop-badge">
-          <span class="badge-head blue">98</span><br />
+          <span class="badge-head blue">{{inventory.audio_books}}</span><br />
           <span class="badge-data blue"
             >Audio <br />
             Books</span
@@ -20,7 +20,7 @@
       >
       <a href="/top-articles"
         ><span class="badge badge-pill badge-light desktop-badge">
-          <span class="badge-head blue">306</span><br />
+          <span class="badge-head blue">{{inventory.articles}}</span><br />
           <span class="badge-data blue"
             >Articles <br />
             Released</span

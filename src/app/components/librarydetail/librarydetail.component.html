@@ -9,12 +9,15 @@
         >Uploaded by
         <i class="fa fa-pencil-square-o date-author-content">
           {{ content.author }}</i
-        >at
+        >
+        at &nbsp;
       </span>
-      <i class="fa fa-clock-o date-author-content">
-        {{ content.created_at | date: "MMM dd yyyy, HH:mm" }}
-      </i>
-      <hr />
+      <span class="float-left date-author-box-content">
+        <i class="fa fa-clock-o date-author-content">
+          {{ content.created_at | date: "MMM dd yyyy, HH:mm" }}
+        </i></span
+      >
+      <hr class="margin-3-1" />
       <div class="col-md-6" style="width: 92% !important">
         <div class="player__container float-left">
           <div class="player__body">
@@ -127,12 +130,11 @@
   </div>
   <div class="col-md-2"></div>
   <div class="col-md-2"></div>
-  <div class="col-md-8" style="margin-left: 1rem;">
+  <div class="col-md-8" style="margin-left: 1rem">
     <app-comment
       *ngIf="content"
       postType="library"
       postId="{{ content.id }}"
-      
     ></app-comment>
   </div>
 </div>

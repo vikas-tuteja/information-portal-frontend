@@ -5,6 +5,7 @@ import { CommentsService } from 'src/app/servies/comments.service';
 import { ToastrService } from 'ngx-toastr';
 import { MESSAGES } from 'src/app/constants/messages';
 import { SharedService } from 'src/app/services/shared.service';
+import { CONSTANTS } from 'src/app/constants/constants';
 declare var $: any;
 
 @Component({
@@ -19,7 +20,8 @@ export class CommentComponent implements OnInit {
   comments!: Comment[];
   totalLikes!: number;
   totalComments!: number;
-  page!: number;
+  totalCommentsInDB!: number;
+  pageSize!: number;
   canLike!: boolean;
   reactionId!: number;
   isLoggedIn!: boolean;
@@ -42,7 +44,7 @@ export class CommentComponent implements OnInit {
 
     // get comments list
     this.route.queryParamMap.subscribe((qpMap) => {
-      this.page = parseInt(qpMap.get('page') || '1');
+      // this.page = parseInt(qpMap.get('page') || '1');
       this.getCommentsList();
     });
 
@@ -53,19 +55,18 @@ export class CommentComponent implements OnInit {
 
   getCommentsList() {
     this.commentsService
-      .getComments(this.postType, this.postId, this.page)
+      .getComments(this.postType, this.postId, this.pageSize)
       .subscribe((data) => {
         this.comments = data.results;
         this.totalLikes = data.total_likes;
         this.totalComments = data.results.length;
         this.canLike = data.can_like;
+        this.totalCommentsInDB = data.count;
       });
   }
 
-  // create Like/Comment
+  // create Like/Comment post
   createReaction(activityType: string) {
-    if (this.sharedService.isLoggedIn()) {
-    }
     var data = {
       content_type: this.postType,
       object_id: this.postId,
@@ -94,6 +95,9 @@ export class CommentComponent implements OnInit {
         if (activityType == 'Comment') {
           (document.getElementById('comment') as HTMLInputElement).value = '';
           this.toastr.success(MESSAGES.COMMENT_POSTED_SUCCESSFULLY);
+        } else if (activityType == 'Like') {
+          const tl = document.getElementById('totalLikes') as HTMLDivElement;
+          if (tl) tl.innerHTML = `${this.totalLikes + 1}`;
         }
       });
     return true;
@@ -101,7 +105,6 @@ export class CommentComponent implements OnInit {
 
   // set reaction id to be delete on clicking trash icon
   setDeleteConfirmation(elem: any) {
-    // debugger
     const obj = elem.target;
     this.reactionId = obj.getAttribute('data-reactionId');
   }
@@ -117,9 +120,15 @@ export class CommentComponent implements OnInit {
   // alreadyLike
   cannotLike() {
     if (this.isLoggedIn) {
-      this.toastr.info(MESSAGES.ALREADY_LIKE);
+      this.toastr.warning(MESSAGES.ALREADY_LIKE);
     } else {
-      this.toastr.info(MESSAGES.LOGIN_TO_LIKE);
+      this.toastr.warning(MESSAGES.LOGIN_TO_LIKE);
     }
+  }
+
+  // load More Commments -> reload with more page size
+  loadMoreCommments() {
+    this.pageSize = this.totalComments + CONSTANTS.PAGE_SIZE;
+    this.commentsService.refreshNeeded$.next();
   }
 }
