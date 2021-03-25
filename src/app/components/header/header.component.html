@@ -49,12 +49,11 @@
 <div class="blue-bg">
   <!-- Mobile only header -->
   <div class="" *ngIf="!isDesktop">
-    
     <div class="mainContainer">
       <header>
-        <a class="each-nav white" mdbWavesEffect href="/"
-          ><span class="pointer">Logo</span></a
-        >
+        <a class="each-nav white" mdbWavesEffect href="/">
+          <!-- <img class="logo img-no-padding" src="/assets/images/logo.jpeg" /> -->
+        </a>
         <form class="form-inline md-form form-sm active-pink-2">
           <input
             class="form-control form-control-sm mr-3 w-75 white-bg autocomplete search"
@@ -69,7 +68,7 @@
             (click)="cssSetUp()"
           />
         </form>
-        
+
         <nav class="mainMenu">
           <ul>
             <li>
@@ -126,12 +125,15 @@
     <div class="" class="header-left-panel"></div>
     <div class="" class="header-center-panel">
       <ul class="navbar-nav full-width input-icons">
-        <li class="nav-item">
-          <a class="each-nav white" mdbWavesEffect href="/"
-            ><span class="pointer">Logo</span></a
-          >
+        <li class="">
+          <a class="" mdbWavesEffect href="/"
+            ><img class="logo img-no-padding" src="/assets/images/logo.jpeg"
+          /></a>
         </li>
-        <li class="nav-item" [ngClass]="{ active: selectedPage === 'home' }">
+        <li
+          class="first-nav-item nav-item"
+          [ngClass]="{ active: selectedPage === 'home' }"
+        >
           <a class="each-nav white" mdbWavesEffect href=""
             ><span class="pointer">Home</span></a
           >
