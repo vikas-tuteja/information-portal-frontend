@@ -6,13 +6,10 @@ import { SignUp } from '../models/user';
 import { API } from '../constants/urls';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   // signup post form
   signUpPost(data: any): Observable<any> {
@@ -28,13 +25,17 @@ export class UserService {
   setAuthUser(response: any) {
     localStorage.setItem(
       'user',
-      JSON.stringify({ token: response.token, name: response.name })
+      JSON.stringify({
+        token: response.token,
+        name: response.name,
+        id: response.id,
+      })
     );
   }
 
   // get username and token from localstorage
   getAuthUser() {
-    const user = localStorage.getItem('user')
+    const user = localStorage.getItem('user');
     if (user) {
       return JSON.parse(user);
     } else {

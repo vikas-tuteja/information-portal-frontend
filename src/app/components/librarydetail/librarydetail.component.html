@@ -22,18 +22,7 @@
         <div class="player__container float-left">
           <div class="player__body">
             <div class="body__cover">
-              <ul class="list list--cover">
-                <!-- <li>
-                            <a class="list__link" href=""><i class="fa fa-navicon"></i></a>
-                        </li>
-                        <li>
-                            <a class="list__link" href=""></a>
-                        </li>
-                        <li>
-                            <a class="list__link" href=""><i class="fa fa-search"></i></a>
-                        </li> -->
-              </ul>
-
+              <ul class="list list--cover"></ul>
               <img
                 *ngIf="content"
                 class="img-no-padding"
@@ -41,32 +30,23 @@
                 onerror="this.src='/assets/images/default_audio_player.jpg'"
                 alt="Album cover"
               />
-              <!-- <div class="range"></div> -->
             </div>
-
             <div class="body__info">
               <div class="info__album">{{ content.title }}</div>
-
               <div class="info__song">{{ content.album_name }}</div>
-
               <div class="info__artist">{{ content.singer_name }}</div>
             </div>
-
             <div class="body__buttons">
               <ul class="list list--buttons">
-                <!-- <li><a href="#" class="list__link"><i class="fa fa-step-backward"></i></a></li> -->
-                <!-- <li><a href="{{content.audio_file}}" class="list__link"><i class="fa fa-play"></i></a></li> -->
                 <li>
                   <!-- <i class="fa fa-play"></i></audio>  -->
                   <audio controls source src="{{ content.audio_file }}">
                     Your browser does not support the audio element.
                   </audio>
                 </li>
-                <!-- <li><a href="#" class="list__link"><i class="fa fa-step-forward"></i></a></li> -->
               </ul>
             </div>
           </div>
-
           <div class="player__footer">
             <ul class="list list--footer">
               <li>
@@ -97,7 +77,7 @@
       </div>
     </div>
 
-    <div class="content-data-summary col-md-6 float-left">
+    <div class="content-data-summary float-left">
       <div class="summary-ht">{{ content.summary }}</div>
 
       <div class="content-data">

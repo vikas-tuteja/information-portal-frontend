@@ -259,7 +259,7 @@ a {
   }
 
   .player__container {
-    max-width: 20rem;
+    max-width: 114%;
     margin: 0 !important;
   }
 

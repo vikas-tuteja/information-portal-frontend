@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MESSAGES } from 'src/app/constants/messages';
 import { SharedService } from 'src/app/services/shared.service';
 import { CONSTANTS } from 'src/app/constants/constants';
+import { UserService } from 'src/app/services/user.service';
 declare var $: any;
 
 @Component({
@@ -26,13 +27,15 @@ export class CommentComponent implements OnInit {
   reactionId!: number;
   isLoggedIn!: boolean;
   url!: string;
+  loggedInUser: any;
 
   constructor(
     private route: ActivatedRoute,
     private toastr: ToastrService,
     private commentsService: CommentsService,
     private sharedService: SharedService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +44,7 @@ export class CommentComponent implements OnInit {
 
     // check if login
     this.isLoggedIn = this.sharedService.isLoggedIn();
+    this.loggedInUser = this.userService.getAuthUser();
 
     // get comments list
     this.route.queryParamMap.subscribe((qpMap) => {

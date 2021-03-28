@@ -26,7 +26,7 @@
       <span>&nbsp;255 characters allowed...</span>
       <div *ngIf="isLoggedIn">
         <button (click)="createReaction('Comment')">Submit</button>
-        <br>
+        <br />
       </div>
       <div *ngIf="!isLoggedIn" class="text-right">
         <span
@@ -39,7 +39,9 @@
     </div>
   </li>
   <br />
-  <span class="badge-data" *ngIf="totalComments">&nbsp;&nbsp;Latest Comments<br /><br /></span>
+  <span class="badge-data" *ngIf="totalComments"
+    >&nbsp;&nbsp;Latest Comments<br /><br
+  /></span>
   <li class="comment user-comment" *ngFor="let comment of comments; index as i">
     <div class="info">
       <a class="float-left"
@@ -56,7 +58,7 @@
       }"
     >
       {{ comment.text }}
-      <span class="float-right pointer"
+      <span class="float-right pointer" *ngIf="isLoggedIn && comment.user.id==loggedInUser.id"
         ><i
           class="fa fa-trash"
           (click)="basicModal.show()"

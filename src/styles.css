@@ -22,7 +22,7 @@ img {
   padding: 0rem !important;
 }
 
-.top-margin{
+.top-margin {
   margin-top: 2rem;
 }
 
@@ -370,6 +370,7 @@ a:hover {
   font-size: 1.3rem;
   margin: 1.5rem 0 1.5rem 0;
   margin-left: 2rem !important;
+  width: 45rem;
 }
 
 .whatsapp-green {
@@ -497,8 +498,8 @@ a:hover {
 
   .content-data-summary {
     font-size: 1.3rem;
-    margin: 1.5rem 0 1.5rem 0 !important;
-    /* margin-left: 2rem !important; */
+    margin: 1.5rem !important;
+    width: 94%;
   }
 }
 
